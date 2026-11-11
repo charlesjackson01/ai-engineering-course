@@ -1,0 +1,2 @@
+{ "name": "Cole's AI Engineering Course", "short_name": "Cole's Course", "start_url": "./", "display": "standalone",
+  "background_color": "#faf6ef", "theme_color": "#faf6ef", "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }] }

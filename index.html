@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cole's AI Engineering Course</title>
+<meta name="description" content="Cole's personal Python and AI engineering course, with a built-in Python editor.">
+<meta name="theme-color" content="#faf6ef">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<!-- Enables cross-origin isolation (SharedArrayBuffer for input()) on hosts that can't set headers, like GitHub Pages. -->
+<script src="coi-serviceworker.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#/home"><span class="logo">🐍</span><span>Cole's AI Engineering Course</span></a>
+  <nav class="tabs" aria-label="Main">
+    <a data-nav="home" href="#/home"><span class="ti">🏠</span><span>Home</span></a>
+    <a data-nav="lesson" href="#/lessons"><span class="ti">📘</span><span>Lessons</span></a>
+    <a data-nav="play" href="#/play"><span class="ti">✏️</span><span>Playground</span></a>
+    <a data-nav="cheat" href="#/cheat"><span class="ti">🔁</span><span>Cheat sheet</span></a>
+    <a data-nav="quiz" href="#/quiz"><span class="ti">❓</span><span>Quiz</span></a>
+  </nav>
+</header>
+<main id="main" class="wrap"></main>
+<noscript><p class="wrap">This course needs JavaScript turned on.</p></noscript>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
