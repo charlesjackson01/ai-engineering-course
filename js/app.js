@@ -257,7 +257,16 @@ function mountWorkspace(host, { lessonId, code, onChange, onReset }) {
   async function doRun() {
     if (busy) runner.stop();
     clearCon(); results.hidden = true; setBusy(true);
-    if (!runner.ready) { write("Starting Python… (the first load takes a few seconds)\n", "muted"); await runner.readyPromise; clearCon(); }
+    if (!runner.ready) {
+      if (runner.loadError) runner.respawn();
+      write("Starting Python… (the first load downloads about 13 MB, so it can take a little while)\n", "muted");
+      try { await runner.readyPromise; clearCon(); }
+      catch (err) {
+        write("\n■ Python couldn't start: " + err.message + "\n\nTry: 1) a hard refresh (Ctrl+Shift+R), 2) turning off ad/script blockers for this site, 3) updating Firefox, or 4) the fallback link below. Hit Run to try again.\n", "sys bad");
+        const l = document.createElement("a"); l.href = location.pathname + "?nosab=1" + location.hash; l.textContent = "Open fallback mode"; l.style.color = "inherit"; con.appendChild(l);
+        setBusy(false); return;
+      }
+    }
     const r = await runner.run(getCode(), { onOut: (t) => write(t), onInput: askInput });
     removeInput(); setBusy(false);
     if (r.status === "ok") write("\n✓ Finished\n", "sys ok");

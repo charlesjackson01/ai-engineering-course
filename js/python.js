@@ -20,13 +20,18 @@ export class PythonRunner {
     }
     this.readyPromise = new Promise((resolve, reject) => { this._readyResolve = resolve; this._readyReject = reject; });
     this.worker.onmessage = (e) => this._onMessage(e.data);
-    this.worker.onerror = (e) => { this.onStatus("error", e.message || "The Python worker failed to start."); };
+    this.readyPromise.catch(() => {});
+    const fail = (msg) => { if (this.ready) return; clearTimeout(this._watchdog); this.loadError = msg; this.onStatus("error", msg); this._readyReject(new Error(msg)); };
+    this._fail = fail;
+    this.worker.onerror = (e) => fail(e.message || "The Python worker failed to start.");
+    clearTimeout(this._watchdog);
+    this._watchdog = setTimeout(() => fail("Python took more than 90 seconds to start."), 90000);
     this.worker.postMessage({ type: "init", sab });
   }
   respawn() { try { this.worker.terminate(); } catch {} this.spawn(); }
   _onMessage(m) {
-    if (m.type === "ready") { this.ready = true; this.version = m.version; this.onStatus("ready"); this._readyResolve(); return; }
-    if (m.type === "init-error") { this.onStatus("error", m.result.msg); return; }
+    if (m.type === "ready") { clearTimeout(this._watchdog); this.ready = true; this.version = m.version; this.onStatus("ready"); this._readyResolve(); return; }
+    if (m.type === "init-error") { this._fail(m.result.msg || "Python failed to load."); return; }
     const job = this.job; if (!job) return;
     if (m.type === "out") job.onOut && job.onOut(m.text);
     else if (m.type === "input-request") { job.waiting = true; job.pauseTimer(); job.onInput && job.onInput(m.prompt); }
