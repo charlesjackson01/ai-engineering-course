@@ -83,8 +83,9 @@ export function renderDiagram(d, title) {
       b += arrow(x + bw / 2, 104, W / 2 + (i - 1) * 40, 140);
     });
     b += node(55, 144, 230, 52, { label: "for food in foods:", detail: 'print("I like " + food)', kind: "terminal" });
-    b += `<text x="${W / 2}" y="220" class="d-detail">one pass per item: chicken, then tacos, then pizza</text>`;
-    return svg(232, b, title);
+    b += `<text x="${W / 2}" y="214" class="d-detail">one pass per item:</text>`;
+    b += `<text x="${W / 2}" y="230" class="d-detail">chicken, then tacos, then pizza</text>`;
+    return svg(244, b, title);
   }
   return "";
 }

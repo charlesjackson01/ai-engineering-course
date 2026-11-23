@@ -23,8 +23,10 @@ function readLine(prompt) {
   inputCount++;
   if (mode === "test") {
     prompts.push(prompt);
+    // Prompts are not part of r.out. The workbook's expected output is print() only.
+    if (prompt && progOut.endsWith(prompt)) progOut = progOut.slice(0, -prompt.length);
     if (!queue.length) return -2;
-    const a = String(queue.shift()); testOut += a + "\n"; progOut += "\n"; return a;
+    const a = String(queue.shift()); testOut += a + "\n"; return a;
   }
   if (mode === "replay") { flushOut(); return queue.length ? String(queue.shift()) : -1; }
   flushOut();
