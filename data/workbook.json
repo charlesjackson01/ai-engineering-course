@@ -1,0 +1,2694 @@
+{
+  "version": "1.0",
+  "course": "Cole's AI Engineering Course",
+  "phase_id": "phase-0",
+  "phase_title": "First steps",
+  "audience": "Complete beginner. One concept per lesson. Tasks under 20 minutes. Less reading, more visuals and hands-on work.",
+  "loop": [
+    "see",
+    "predict",
+    "tweak",
+    "fix",
+    "build"
+  ],
+  "lesson_order": [
+    "l1",
+    "l2",
+    "l3",
+    "l4",
+    "l5",
+    "l6",
+    "l7",
+    "l8",
+    "warmup",
+    "l9",
+    "l10",
+    "l11",
+    "l12"
+  ],
+  "aligned_with": {
+    "repo": "https://github.com/charlesjackson01/ai-engineering-course",
+    "live": "https://charlesjackson01.github.io/ai-engineering-course/",
+    "content_file": "js/content.js",
+    "diagrams_file": "js/diagrams.js",
+    "lesson_ids": "Same ids as LESSON_ORDER. L10–L12 are previews in the app today; this file supplies their full workbook content.",
+    "diagram_types": [
+      "chain",
+      "pairs",
+      "branch",
+      "ladder",
+      "loop",
+      "list"
+    ],
+    "notes": "Student-facing wording matches the current app. expected_stdout is print() output only (the app stores prompts on r.prompts, not r.out). Strip # comments before applying rule patterns, as ruleChecks already does."
+  },
+  "skills_map": [
+    {
+      "id": "python-fundamentals",
+      "name": "Python fundamentals",
+      "now": [
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6",
+        "l7",
+        "l8",
+        "warmup",
+        "l9",
+        "l10",
+        "l11",
+        "l12"
+      ],
+      "later": "Kept sharp in every later phase, especially Python foundations.",
+      "why": "Every AI tool you use later is written in Python, or called from it."
+    },
+    {
+      "id": "data-handling",
+      "name": "Data handling",
+      "now": [
+        "l9",
+        "l11",
+        "l12"
+      ],
+      "later": "Seeing data (~6 weeks): tables, files, cleaning, and a dashboard.",
+      "why": "Lists and dictionaries are how programs hold rows and records. Later you will load real datasets."
+    },
+    {
+      "id": "ml-basics",
+      "name": "ML basics",
+      "now": [],
+      "later": "Classical ML (~10 weeks): train/test split, a first model, and reading its score.",
+      "why": "Job posts expect you to train a simple model and explain what the score means."
+    },
+    {
+      "id": "llm-apis",
+      "name": "LLM APIs",
+      "now": [],
+      "later": "Neural nets, then LLMs (~16 weeks): call a model, send a prompt, read the reply.",
+      "why": "AI engineer work is mostly talking to models through an API, not training one from scratch."
+    },
+    {
+      "id": "prompt-engineering",
+      "name": "Prompt engineering",
+      "now": [
+        "l4"
+      ],
+      "later": "Neural nets, then LLMs: write, test, and tighten prompts on purpose.",
+      "why": "L4 already shows that the exact wording of a prompt (even a trailing space) changes what you get back."
+    },
+    {
+      "id": "rag",
+      "name": "RAG",
+      "now": [],
+      "later": "Building AI apps (~16 weeks): retrieve from your own documents, then generate an answer.",
+      "why": "Most production AI apps answer from a company's files, not from the model's memory alone."
+    },
+    {
+      "id": "agents-tool-use",
+      "name": "Agents / tool use",
+      "now": [
+        "l10",
+        "l12"
+      ],
+      "later": "Building AI apps capstone: an agent that calls tools and a RAG pipeline.",
+      "why": "A function is a tool you can call. A chat loop that picks a path (help, name, bye) is the same idea as an agent choosing a tool."
+    },
+    {
+      "id": "evaluation",
+      "name": "Evaluation",
+      "now": [
+        "l6",
+        "l7"
+      ],
+      "later": "Classical ML and Building AI apps: test sets, rubrics, and checking model answers.",
+      "why": "Check uses exact matches and ordered rules, the same habit you need when you score a model."
+    },
+    {
+      "id": "deployment-mlops",
+      "name": "Deployment / MLOps",
+      "now": [],
+      "later": "Building AI apps: put a working app on the web, log runs, and watch it break safely.",
+      "why": "A project is not done until someone else can open it and use it."
+    },
+    {
+      "id": "safety",
+      "name": "Safety",
+      "now": [
+        "l6",
+        "warmup",
+        "l12"
+      ],
+      "later": "Building AI apps: prompt injection, secrets, and what the app must refuse.",
+      "why": "Exact-match checks, a clear quit path, and not treating every input as trusted start here."
+    }
+  ],
+  "milestones": [
+    {
+      "id": "phase-0-chat",
+      "phase": "Phase 0 · First steps (~4 weeks)",
+      "title": "Mini chat program",
+      "unlocks_after": "l12",
+      "description": "A tiny chatbot that greets you by name, answers a few commands, and quits on bye. This is Lesson 12, cleaned up for a public repo.",
+      "skills_shown": [
+        "python-fundamentals",
+        "data-handling",
+        "agents-tool-use",
+        "safety"
+      ],
+      "checklist": [
+        "Public GitHub repo with a short README: what it does, how to run it, a sample conversation.",
+        "One screenshot or copy-pasted chat transcript in the README.",
+        "The program greets by name, handles help / name / bye, and never loops forever.",
+        "Code is a single .py file a reviewer can run with `python3 chat.py`."
+      ]
+    },
+    {
+      "id": "phase-1-game",
+      "phase": "Python foundations (~8 weeks)",
+      "title": "Small game",
+      "unlocks_after": null,
+      "description": "A short text game (guess-the-number or a tiny adventure) that uses functions, loops, and data. Playable in the terminal, with win and lose paths.",
+      "skills_shown": [
+        "python-fundamentals",
+        "data-handling"
+      ],
+      "checklist": [
+        "README with how to play, the rules, and one sample run.",
+        "Replayable: you can start a new game without restarting the file by hand.",
+        "At least two functions (for example, start_game and check_guess).",
+        "No infinite loop; there is a quit command or a turn limit."
+      ]
+    },
+    {
+      "id": "phase-2-dashboard",
+      "phase": "Seeing data (~6 weeks)",
+      "title": "Data dashboard",
+      "unlocks_after": null,
+      "description": "Load a real CSV, clean a few messy values, and show 2–3 charts that answer a question. A notebook or small web page is fine.",
+      "skills_shown": [
+        "python-fundamentals",
+        "data-handling",
+        "evaluation"
+      ],
+      "checklist": [
+        "README states the question, the data source, and how to run it.",
+        "The data file (or a download script) lives with the project.",
+        "Charts have titles and axis labels a stranger can read.",
+        "A short 'what I found' section with one honest limitation."
+      ]
+    },
+    {
+      "id": "phase-3-math-explorer",
+      "phase": "Math through pictures (~8 weeks)",
+      "title": "Visual explorer",
+      "unlocks_after": null,
+      "description": "An interactive picture of one idea you need for ML, such as a line fit or a loss curve. Sliders or simple inputs change the picture.",
+      "skills_shown": [
+        "python-fundamentals",
+        "data-handling",
+        "ml-basics"
+      ],
+      "checklist": [
+        "README explains the picture in plain words, then the math in one short block.",
+        "A screenshot of the default view and one 'what happens if I change X' note.",
+        "The visual updates when you change a value.",
+        "No formula appears without a picture next to it."
+      ]
+    },
+    {
+      "id": "phase-4-ml-model",
+      "phase": "Classical ML (~10 weeks)",
+      "title": "Trained model",
+      "unlocks_after": null,
+      "description": "Train a classic model on a public dataset, report a test score, and show two mistakes it made. Keep the pipeline reproducible.",
+      "skills_shown": [
+        "python-fundamentals",
+        "data-handling",
+        "ml-basics",
+        "evaluation"
+      ],
+      "checklist": [
+        "README: problem, data, model type, test score, and how to rerun from scratch.",
+        "A train/test split, with the test score coming only from the test set.",
+        "Saved metrics (and the model or a seed) so a reviewer gets the same number.",
+        "A short error analysis: two examples it got wrong, and a guess why."
+      ]
+    },
+    {
+      "id": "phase-5-llm",
+      "phase": "Neural nets, then LLMs (~16 weeks)",
+      "title": "LLM app or notebook",
+      "unlocks_after": null,
+      "description": "A small app that calls an LLM API with a clear prompt, shows the reply, and compares two prompt versions. No training required.",
+      "skills_shown": [
+        "llm-apis",
+        "prompt-engineering",
+        "evaluation",
+        "safety"
+      ],
+      "checklist": [
+        "README: what the app does, which API, and how to set a key without committing it.",
+        "A .env.example (no real secrets) and the key loaded from the environment.",
+        "Two saved prompt versions and a short note on which was better, and why.",
+        "A refusal or guard for one unsafe or off-topic request."
+      ]
+    },
+    {
+      "id": "phase-6-capstone",
+      "phase": "Building AI apps (~16 weeks)",
+      "title": "RAG or agent capstone",
+      "unlocks_after": null,
+      "description": "A deployed AI app that answers from your documents (RAG) or calls tools (agent). This is the portfolio centerpiece.",
+      "skills_shown": [
+        "llm-apis",
+        "prompt-engineering",
+        "rag",
+        "agents-tool-use",
+        "evaluation",
+        "deployment-mlops",
+        "safety"
+      ],
+      "checklist": [
+        "Live link plus source repo. README has a 60-second demo (gif or video).",
+        "A documented architecture: retrieve or tool call, then generate.",
+        "At least five evaluation examples, including one failure.",
+        "Secrets stay out of git. Basic safety: off-topic and injection cases are handled.",
+        "A 'how to run locally' section that actually works on a clean machine."
+      ]
+    }
+  ],
+  "lessons": {
+    "l1": {
+      "id": "l1",
+      "tag": "L1",
+      "title": "Print and Hello",
+      "concept": "`print` is how you put words on the screen. That's the whole lesson.",
+      "skills": [
+        "python-fundamentals"
+      ],
+      "see": {
+        "kind": "mermaid",
+        "diagram": {
+          "type": "chain",
+          "nodes": [
+            {
+              "label": "You type",
+              "detail": "print(\"Hello\")"
+            },
+            {
+              "label": "Python runs it"
+            },
+            {
+              "label": "The screen shows",
+              "detail": "Hello",
+              "kind": "terminal"
+            }
+          ]
+        },
+        "mermaid": "flowchart TD\n    A[\"You type<br/>print(\\\"Hello\\\")\"] --> B[Python runs it]\n    B --> C[\"The screen shows<br/>Hello\"]",
+        "labels": [
+          "You type",
+          "print(\"Hello\")",
+          "Python runs it",
+          "The screen shows",
+          "Hello"
+        ],
+        "explain": "You write one print line. Python runs it and shows whatever was inside the quotes."
+      },
+      "predict": [
+        {
+          "id": "l1-p1",
+          "code": "print(\"Hello\")",
+          "options": [
+            "Hello",
+            "\"Hello\"",
+            "Hello with quotes around it"
+          ],
+          "correct": 0,
+          "why": "print shows the text inside the quotes, not the quotes themselves."
+        },
+        {
+          "id": "l1-p2",
+          "code": "print(\"Hi\")\nprint(\"Cole\")",
+          "options": [
+            "Hi then Cole, on two lines",
+            "HiCole",
+            "Hi Cole, on one line"
+          ],
+          "correct": 0,
+          "why": "Each print starts a new line."
+        }
+      ],
+      "tweak": {
+        "starter": "print(\"Hello\")\n",
+        "prompts": [
+          {
+            "change": "Change the text inside the quotes from Hello to Hi, then run it.",
+            "expect": "The screen shows Hi."
+          },
+          {
+            "change": "Add a second line: print(\"Cole\"), then run it.",
+            "expect": "Two lines appear: Hi (or Hello) on the first line, Cole on the second."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l1-f1",
+          "bug": "Hello is not in quotes, so Python looks for a variable named Hello.",
+          "broken": "print(Hello)",
+          "hint": "If you want the word itself, wrap it in quotes.",
+          "fixed": "print(\"Hello\")"
+        }
+      ],
+      "build": {
+        "task": "Write one line that prints Hello. Run it. You should see Hello.",
+        "starter": "# Lesson 1: print Hello\n",
+        "reference": "print(\"Hello\")\n",
+        "rules": [
+          {
+            "id": "has_print",
+            "type": "regex",
+            "pattern": "\\bprint\\s*\\(",
+            "pass_text": "You used `print()`",
+            "fail_text": "This needs a `print()` line",
+            "correction": "Add a line that starts with `print(`.",
+            "hint": "The whole lesson is one line: `print(\"Hello\")`."
+          },
+          {
+            "id": "prints_hello",
+            "type": "regex",
+            "pattern": "[\"']Hello[\"']|[\"']hello[\"']",
+            "pass_text": "You're printing Hello",
+            "fail_text": "The lesson asks you to print Hello",
+            "correction": "Put Hello inside the quotes.",
+            "hint": "Whatever is inside the quotes is what appears on the screen."
+          }
+        ],
+        "tests": [
+          {
+            "id": "prints_hello",
+            "inputs": [],
+            "expected_stdout": "Hello\n",
+            "includes": [
+              "Hello"
+            ],
+            "case_insensitive": true,
+            "status": "ok",
+            "pass_text": "Running it prints Hello",
+            "fail_text": "Running it doesn't print Hello yet",
+            "correction": "Check the spelling inside the quotes.",
+            "hint": "Whatever is inside the quotes is what appears on the screen."
+          }
+        ]
+      }
+    },
+    "l2": {
+      "id": "l2",
+      "tag": "L2",
+      "title": "Strings vs variables",
+      "concept": "Quotes make a string: Python prints exactly what's inside. A name without quotes is a variable: Python looks up what you stored there.",
+      "skills": [
+        "python-fundamentals"
+      ],
+      "see": {
+        "kind": "mermaid",
+        "diagram": {
+          "type": "pairs",
+          "pairs": [
+            [
+              {
+                "label": "print(\"name\")",
+                "detail": "quotes around the word"
+              },
+              {
+                "label": "shows the word",
+                "detail": "name",
+                "kind": "terminal"
+              }
+            ],
+            [
+              {
+                "label": "print(name)",
+                "detail": "no quotes, a variable"
+              },
+              {
+                "label": "shows the value",
+                "detail": "Cole Jackson",
+                "kind": "terminal"
+              }
+            ]
+          ]
+        },
+        "mermaid": "flowchart LR\n    A[\"print(\\\"name\\\")<br/>quotes around the word\"] --> B[\"shows the word<br/>name\"]\n    C[\"print(name)<br/>no quotes, a variable\"] --> D[\"shows the value<br/>Cole Jackson\"]",
+        "labels": [
+          "print(\"name\")",
+          "quotes around the word",
+          "shows the word",
+          "name",
+          "print(name)",
+          "no quotes, a variable",
+          "shows the value",
+          "Cole Jackson"
+        ],
+        "explain": "Quotes mean print this exact text. No quotes means look up the variable and print what is stored there."
+      },
+      "predict": [
+        {
+          "id": "l2-p1",
+          "code": "name = \"Cole\"\nprint(\"name\")",
+          "options": [
+            "Cole",
+            "name",
+            "an error"
+          ],
+          "correct": 1,
+          "why": "Quotes make a string, so Python prints the word name."
+        },
+        {
+          "id": "l2-p2",
+          "code": "name = \"Cole\"\nprint(name)",
+          "options": [
+            "Cole",
+            "name",
+            "an error"
+          ],
+          "correct": 0,
+          "why": "No quotes, so Python looks up the variable and prints Cole."
+        }
+      ],
+      "tweak": {
+        "starter": "name = \"Cole\"\nprint(name)\n",
+        "prompts": [
+          {
+            "change": "Change the stored text from Cole to Jackson, then run it.",
+            "expect": "The screen shows Jackson."
+          },
+          {
+            "change": "Change print(name) to print(\"name\"), then run it.",
+            "expect": "The screen shows the word name, not Jackson."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l2-f1",
+          "bug": "Quotes around the variable name print the word, not the stored value.",
+          "broken": "name = \"Cole Jackson\"\nprint(\"name\")",
+          "hint": "Use the variable's name with no quotes when you want the value.",
+          "fixed": "name = \"Cole Jackson\"\nprint(name)"
+        }
+      ],
+      "build": {
+        "task": "Store your name in a variable, then print the variable and print `\"name\"`. Notice the difference.",
+        "starter": "# Lesson 2: store your name, then print it two ways\n",
+        "reference": "name = \"Cole Jackson\"\nprint(name)\nprint(\"name\")\n",
+        "rules": [
+          {
+            "id": "stored_string",
+            "type": "regex",
+            "pattern": "[A-Za-z_]\\w*\\s*=\\s*[\"']",
+            "pass_text": "You stored text in a variable",
+            "fail_text": "Store your name in a variable first",
+            "correction": "Write something like `name = \"Cole Jackson\"`.",
+            "hint": "The quotes go around the text you store, not around the variable's name."
+          },
+          {
+            "id": "printed_variable",
+            "type": "regex",
+            "pattern": "\\bprint\\s*\\(\\s*[A-Za-z_]\\w*\\s*\\)",
+            "pass_text": "You printed the variable, not the word",
+            "fail_text": "Print the variable without quotes around its name",
+            "correction": "Use `print(name)`, not `print(\"name\")`, to see the stored value.",
+            "hint": "Quotes tell Python to print the exact text inside them."
+          },
+          {
+            "id": "optional_quoted_name",
+            "type": "regex",
+            "pattern": "\\bprint\\s*\\(\\s*[\"']name[\"']\\s*\\)",
+            "optional": true,
+            "pass_text": "You also printed the word name, for comparison",
+            "fail_text": "Optional: also print `\"name\"` to compare",
+            "correction": "This one is extra. `print(\"name\")` shows the word name.",
+            "hint": "One has quotes, one doesn't. That's the whole point of this lesson."
+          }
+        ],
+        "tests": [
+          {
+            "id": "shows_stored_value",
+            "inputs": [],
+            "expected_stdout": "Cole Jackson\nname\n",
+            "has_line_other_than": "name",
+            "status": "ok",
+            "pass_text": "Running it shows the value you stored",
+            "fail_text": "Running it doesn't show your stored value",
+            "correction": "Only the word name (or nothing) showed up. Print the variable itself.",
+            "hint": "`print(name)` with no quotes."
+          }
+        ]
+      }
+    },
+    "l3": {
+      "id": "l3",
+      "tag": "L3",
+      "title": "Numbers and math",
+      "concept": "Numbers do math. Strings join. Same `+` sign, two different jobs. Other math operators: `-` subtract, `*` multiply, `/` divide.",
+      "skills": [
+        "python-fundamentals"
+      ],
+      "see": {
+        "kind": "mermaid",
+        "diagram": {
+          "type": "pairs",
+          "pairs": [
+            [
+              {
+                "label": "5 + 3",
+                "detail": "two numbers"
+              },
+              {
+                "label": "8",
+                "detail": "math",
+                "kind": "terminal"
+              },
+              "adds"
+            ],
+            [
+              {
+                "label": "\"5\" + \"3\"",
+                "detail": "two strings"
+              },
+              {
+                "label": "53",
+                "detail": "concatenation",
+                "kind": "terminal"
+              },
+              "joins"
+            ]
+          ]
+        },
+        "mermaid": "flowchart TD\n    A[\"5 + 3<br/>two numbers\"] -->|adds| B[\"8<br/>math\"]\n    C[\"'5' + '3'<br/>two strings\"] -->|joins| D[\"53<br/>concatenation\"]",
+        "labels": [
+          "5 + 3",
+          "two numbers",
+          "adds",
+          "8",
+          "math",
+          "\"5\" + \"3\"",
+          "two strings",
+          "joins",
+          "53",
+          "concatenation"
+        ],
+        "explain": "With no quotes, + adds. With quotes, + glues text together — that joining is called concatenation."
+      },
+      "predict": [
+        {
+          "id": "l3-p1",
+          "code": "print(5 + 3)",
+          "options": [
+            "8",
+            "53",
+            "5 + 3"
+          ],
+          "correct": 0,
+          "why": "No quotes, so + does math."
+        },
+        {
+          "id": "l3-p2",
+          "code": "print(\"5\" + \"3\")",
+          "options": [
+            "8",
+            "53",
+            "5 + 3"
+          ],
+          "correct": 1,
+          "why": "Both are strings, so they join. That's concatenation, not math."
+        }
+      ],
+      "tweak": {
+        "starter": "print(5 + 3)\nprint(\"5\" + \"3\")\n",
+        "prompts": [
+          {
+            "change": "Change 5 + 3 to 5 * 3, then run it.",
+            "expect": "The first line shows 15. * multiplies."
+          },
+          {
+            "change": "Change \"5\" + \"3\" to \"5\" + \"30\", then run it.",
+            "expect": "The second line shows 530. The strings join, they do not add."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l3-f1",
+          "bug": "You cannot join a string and a number with +.",
+          "broken": "print(\"5\" + 3)",
+          "hint": "Make both sides the same type: two numbers for math, or two strings to join.",
+          "fixed": "print(\"5\" + \"3\")"
+        }
+      ],
+      "build": {
+        "task": "Print a number addition (like 5 + 3) and a string join (like \"5\" + \"3\"). Predict both results before you run them.",
+        "starter": "# Lesson 3: numbers vs strings\n",
+        "reference": "print(5 + 3)\nprint(\"5\" + \"3\")\n",
+        "rules": [
+          {
+            "id": "number_add",
+            "type": "regex",
+            "pattern": "(?<![\"'\\w])\\d+\\s*\\+\\s*\\d+",
+            "pass_text": "You added two numbers",
+            "fail_text": "Add two numbers with no quotes",
+            "correction": "Try `print(5 + 3)` and you should see 8.",
+            "hint": "Numbers have no quotes around them."
+          },
+          {
+            "id": "string_add",
+            "type": "regex",
+            "pattern": "[\"']\\d+[\"']\\s*\\+\\s*[\"']\\d+[\"']",
+            "pass_text": "You joined two strings",
+            "fail_text": "Join two quoted pieces of text with `+`",
+            "correction": "Try `print(\"5\" + \"3\")` and you should see 53.",
+            "hint": "Same `+` sign, different job, because the types are different."
+          }
+        ],
+        "tests": [
+          {
+            "id": "shows_8",
+            "inputs": [],
+            "expected_stdout": "8\n53\n",
+            "includes": [
+              "8"
+            ],
+            "status": "ok",
+            "pass_text": "Running it shows 8 (math)",
+            "fail_text": "Running it doesn't show 8",
+            "correction": "Add a line like `print(5 + 3)`.",
+            "hint": "No quotes around numbers you want to add."
+          },
+          {
+            "id": "shows_53",
+            "inputs": [],
+            "expected_stdout": "8\n53\n",
+            "includes": [
+              "53"
+            ],
+            "status": "ok",
+            "pass_text": "Running it shows 53 (joined strings)",
+            "fail_text": "Running it doesn't show 53",
+            "correction": "Add a line like `print(\"5\" + \"3\")`.",
+            "hint": "Quotes turn numbers into text."
+          }
+        ]
+      }
+    },
+    "l4": {
+      "id": "l4",
+      "tag": "L4",
+      "title": "input() and joining",
+      "concept": "`input()` asks a question and waits. The answer is a string. You can join strings with `+`.",
+      "skills": [
+        "python-fundamentals",
+        "prompt-engineering"
+      ],
+      "see": {
+        "kind": "mermaid",
+        "diagram": {
+          "type": "pairs",
+          "pairs": [
+            [
+              {
+                "label": "input(\"food\")",
+                "detail": "no space at the end"
+              },
+              {
+                "label": "foodChicken",
+                "detail": "the answer sticks",
+                "kind": "terminal"
+              }
+            ],
+            [
+              {
+                "label": "input(\"food \")",
+                "detail": "space inside the quotes"
+              },
+              {
+                "label": "food Chicken",
+                "detail": "a readable line",
+                "kind": "terminal"
+              }
+            ]
+          ]
+        },
+        "mermaid": "flowchart TD\n    A[\"input(\\\"food\\\")<br/>no space at the end\"] --> B[\"foodChicken<br/>the answer sticks\"]\n    C[\"input(\\\"food \\\")<br/>space inside the quotes\"] --> D[\"food Chicken<br/>a readable line\"]",
+        "labels": [
+          "input(\"food\")",
+          "no space at the end",
+          "foodChicken",
+          "the answer sticks",
+          "input(\"food \")",
+          "space inside the quotes",
+          "food Chicken",
+          "a readable line"
+        ],
+        "explain": "input() prints the prompt exactly as written, then waits. Put a space before the closing quote so the answer does not stick to the question."
+      },
+      "predict": [
+        {
+          "id": "l4-p1",
+          "code": "food = \"tacos\"\nprint(\"You like \" + food)",
+          "options": [
+            "You like tacos",
+            "You like food",
+            "Youliketacos"
+          ],
+          "correct": 0,
+          "why": "+ joins the sentence and the value. The space lives inside the quotes."
+        },
+        {
+          "id": "l4-p2",
+          "code": "print(\"Hi\" + \"Cole\")",
+          "options": [
+            "HiCole",
+            "Hi Cole",
+            "an error"
+          ],
+          "correct": 0,
+          "why": "There is no space inside either string, so the words stick together."
+        }
+      ],
+      "tweak": {
+        "starter": "food = input(\"What's your favorite food? \")\nprint(\"You like \" + food)\n",
+        "prompts": [
+          {
+            "change": "Delete the space just before the closing quote in the input prompt, run it, and type Chicken.",
+            "expect": "The question and the answer stick: foodChicken. Put the space back."
+          },
+          {
+            "change": "Keep the prompt space, but change \"You like \" to \"You like\" (no space), then type tacos.",
+            "expect": "The sentence becomes You liketacos. The space has to live inside the quotes."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l4-f1",
+          "bug": "The prompt is missing a space at the end, so the answer sticks: foodChicken.",
+          "broken": "food = input(\"What's your favorite food?\")\nprint(\"You like \" + food)",
+          "hint": "The space has to live inside the quotes, right before the closing quote.",
+          "fixed": "food = input(\"What's your favorite food? \")\nprint(\"You like \" + food)"
+        }
+      ],
+      "build": {
+        "task": "Ask for a food with input() and print a sentence that includes the answer. Check that the sentence looks right.",
+        "starter": "# Lesson 4: ask for a food, then print a sentence\n",
+        "reference": "food = input(\"What's your favorite food? \")\nprint(\"You like \" + food)\n",
+        "rules": [
+          {
+            "id": "has_input",
+            "type": "regex",
+            "pattern": "\\binput\\s*\\(",
+            "pass_text": "You used `input()` to ask a question",
+            "fail_text": "This needs an `input()` line",
+            "correction": "Ask the question with `input(\"What's your favorite food? \")`.",
+            "hint": "The answer comes back as a string, ready to join into a sentence."
+          },
+          {
+            "id": "prompt_trailing_space",
+            "type": "prompt_has_trailing_space",
+            "pass_text": "The prompt has a space at the end",
+            "fail_text": "The prompt is missing a space at the end",
+            "correction": "Put a space before the closing quote, like `input(\"What's your favorite food? \")`.",
+            "hint": "Without that space, you get something like foodChicken."
+          },
+          {
+            "id": "joins_and_prints",
+            "type": "all_of",
+            "all_of": [
+              {
+                "type": "regex",
+                "pattern": "\\+"
+              },
+              {
+                "type": "regex",
+                "pattern": "\\bprint\\s*\\("
+              }
+            ],
+            "pass_text": "You joined the answer into a sentence",
+            "fail_text": "Join the answer onto some text with `+`",
+            "correction": "Try `print(\"You like \" + food)`.",
+            "hint": "Leave a space inside the quoted text so the sentence reads naturally."
+          }
+        ],
+        "tests": [
+          {
+            "id": "prints_chicken",
+            "inputs": [
+              "Chicken"
+            ],
+            "expected_stdout": "You like Chicken\n",
+            "includes": [
+              "Chicken"
+            ],
+            "case_insensitive": true,
+            "min_input_count": 1,
+            "status": "ok",
+            "pass_text": "Answering Chicken prints a sentence with Chicken",
+            "fail_text": "Answering Chicken didn't print it back",
+            "correction": "We typed Chicken, but it never appeared in the output. Print the variable you stored the answer in.",
+            "hint": "Like `print(\"You like \" + food)`."
+          }
+        ]
+      }
+    },
+    "l5": {
+      "id": "l5",
+      "tag": "L5",
+      "title": "int() and str()",
+      "concept": "`input()` always gives you text. `int()` turns text into a number so you can do math. `str()` turns a number into text so you can join it into a sentence.",
+      "skills": [
+        "python-fundamentals"
+      ],
+      "see": {
+        "kind": "mermaid",
+        "diagram": {
+          "type": "chain",
+          "nodes": [
+            {
+              "label": "\"15\"",
+              "detail": "text from input()"
+            },
+            {
+              "label": "15",
+              "detail": "after int()"
+            },
+            {
+              "label": "16",
+              "detail": "after adding 1"
+            },
+            {
+              "label": "\"16\"",
+              "detail": "after str()",
+              "kind": "terminal"
+            }
+          ],
+          "edgeLabels": [
+            "int()",
+            "+ 1",
+            "str()"
+          ]
+        },
+        "mermaid": "flowchart LR\n    A[\\\"'15'\\\"<br/>text from input()] -->|int()| B[\"15<br/>after int()\"]\n    B -->|+ 1| C[\"16<br/>after adding 1\"]\n    C -->|str()| D[\\\"'16'\\\"<br/>after str()]",
+        "labels": [
+          "\"15\"",
+          "text from input()",
+          "int()",
+          "15",
+          "after int()",
+          "+ 1",
+          "16",
+          "after adding 1",
+          "str()",
+          "\"16\"",
+          "after str()"
+        ],
+        "explain": "input() gives you text like '15', and int() makes it a number so you can add 1. str() turns 16 back into text so you can join it into a sentence."
+      },
+      "predict": [
+        {
+          "id": "l5-p1",
+          "code": "print(\"Total: \" + 15)",
+          "options": [
+            "Total: 15",
+            "TypeError",
+            "Total: 16"
+          ],
+          "correct": 1,
+          "why": "You cannot join a string and a number with +. Read the TypeError from the bottom."
+        },
+        {
+          "id": "l5-p2",
+          "code": "age = int(\"15\")\nprint(age + 1)",
+          "options": [
+            "16",
+            "151",
+            "15 + 1"
+          ],
+          "correct": 0,
+          "why": "int() turns the text 15 into a number, so + 1 is math."
+        }
+      ],
+      "tweak": {
+        "starter": "age = int(input(\"How old are you? \"))\nprint(\"Next year you'll be \" + str(age + 1))\n",
+        "prompts": [
+          {
+            "change": "Run it and type 15.",
+            "expect": "The sentence includes 16."
+          },
+          {
+            "change": "Remove str() so the print joins the sentence with age + 1 directly, then type 15.",
+            "expect": "TypeError. Read it from the bottom: it tells you about str and int. Then put str() back."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l5-f1",
+          "bug": "Joining a string and a number with + causes a TypeError.",
+          "broken": "print(\"Total: \" + 15)",
+          "hint": "Read the error from the bottom. The last line names the problem. Wrap the number in str().",
+          "fixed": "print(\"Total: \" + str(15))"
+        }
+      ],
+      "build": {
+        "task": "Ask for a number, add one, and print a sentence that includes the new number.",
+        "starter": "# Lesson 5: ask for a number, add one, print a sentence\n",
+        "reference": "age = int(input(\"How old are you? \"))\nprint(\"Next year you'll be \" + str(age + 1))\n",
+        "rules": [
+          {
+            "id": "has_int",
+            "type": "regex",
+            "pattern": "\\bint\\s*\\(",
+            "pass_text": "You used `int()` to make a number",
+            "fail_text": "This needs `int()` to turn text into a number",
+            "correction": "Wrap the answer, like `age = int(input(\"How old are you? \"))`.",
+            "hint": "If you add text to a number, Python shows a TypeError. Read that error from the bottom."
+          },
+          {
+            "id": "has_str",
+            "type": "regex",
+            "pattern": "\\bstr\\s*\\(",
+            "pass_text": "You used `str()` when joining a number into a sentence",
+            "fail_text": "Use `str()` when you join a number onto text",
+            "correction": "Write something like `print(\"Next year you'll be \" + str(age + 1))`.",
+            "hint": "`\"Total: \" + 15` fails. `\"Total: \" + str(15)` works."
+          }
+        ],
+        "tests": [
+          {
+            "id": "age_15_shows_16",
+            "inputs": [
+              "15"
+            ],
+            "expected_stdout": "Next year you'll be 16\n",
+            "includes": [
+              "16"
+            ],
+            "regex": "\\b16\\b",
+            "status": "ok",
+            "pass_text": "Answering 15 prints a sentence with 16",
+            "fail_text": "Answering 15 didn't show 16",
+            "correction": "We typed 15 and expected to see 16 in the output.",
+            "hint": "int() the answer, add 1, then str() it to join."
+          }
+        ]
+      }
+    },
+    "l6": {
+      "id": "l6",
+      "tag": "L6",
+      "title": "if/else and ==",
+      "concept": "`if` and `else` let the program choose a path. `==` means is exactly this.",
+      "skills": [
+        "python-fundamentals",
+        "evaluation",
+        "safety"
+      ],
+      "see": {
+        "kind": "mermaid",
+        "diagram": {
+          "type": "branch",
+          "ask": "Ask for the password",
+          "check": "password == \"python\"?",
+          "yes": "Access granted",
+          "no": "Access denied"
+        },
+        "mermaid": "flowchart TD\n    A[Ask for the password] --> B{\"password == \\\"python\\\"?\"}\n    B -->|yes| C[Access granted]\n    B -->|no| D[Access denied]",
+        "labels": [
+          "Ask for the password",
+          "password == \"python\"?",
+          "yes",
+          "Access granted",
+          "no",
+          "Access denied"
+        ],
+        "explain": "The program asks one yes/no question, and == checks for an exact match. else is the path for every other answer."
+      },
+      "predict": [
+        {
+          "id": "l6-p1",
+          "code": "password = \"python\"\nif password == \"python\":\n    print(\"Access granted\")\nelse:\n    print(\"Access denied\")",
+          "options": [
+            "Access granted",
+            "Access denied",
+            "python"
+          ],
+          "correct": 0,
+          "why": "== is true when the value is exactly python, so it takes the if path."
+        },
+        {
+          "id": "l6-p2",
+          "code": "password = \"zebra\"\nif password >= \"python\":\n    print(\"Access granted\")\nelse:\n    print(\"Access denied\")",
+          "options": [
+            "Access denied",
+            "Access granted",
+            "an error"
+          ],
+          "correct": 1,
+          "why": ">= compares strings A-to-Z. zebra comes after python, so this is true. Use == for a password."
+        }
+      ],
+      "tweak": {
+        "starter": "password = input(\"What's the password? \")\nif password == \"python\":\n    print(\"Access granted\")\nelse:\n    print(\"Access denied\")\n",
+        "prompts": [
+          {
+            "change": "Run it and type python, then run it again and type zebra.",
+            "expect": "python prints Access granted. zebra prints Access denied."
+          },
+          {
+            "change": "Change == to >=, then type zebra.",
+            "expect": "zebra gets in, because zebra comes after python in the alphabet. Change it back to ==."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l6-f1",
+          "bug": ">= is not a match check. With >=, zebra got through because zebra comes after python in the alphabet.",
+          "broken": "password = input(\"What's the password? \")\nif password >= \"python\":\n    print(\"Access granted\")\nelse:\n    print(\"Access denied\")",
+          "hint": "Use == when you want an exact match, not >=.",
+          "fixed": "password = input(\"What's the password? \")\nif password == \"python\":\n    print(\"Access granted\")\nelse:\n    print(\"Access denied\")"
+        }
+      ],
+      "build": {
+        "task": "Ask for a password. If it is exactly `python`, print Access granted. Otherwise print Access denied. Try the right password and a wrong one.",
+        "starter": "# Lesson 6: check the password with if/else\n",
+        "reference": "password = input(\"What's the password? \")\nif password == \"python\":\n    print(\"Access granted\")\nelse:\n    print(\"Access denied\")\n",
+        "rules": [
+          {
+            "id": "has_if",
+            "type": "regex",
+            "pattern": "\\bif\\b",
+            "pass_text": "You used `if` to make a choice",
+            "fail_text": "This needs an `if` line",
+            "correction": "Start with `if password == \"python\":`.",
+            "hint": "The line after `if` has to be indented."
+          },
+          {
+            "id": "no_gte_on_string",
+            "type": "not_regex",
+            "pattern": ">=\\s*[\"']|[\"'][^\"']*[\"']\\s*>=|password\\s*>=",
+            "flags": "i",
+            "pass_text": "You're checking with `==`",
+            "fail_text": "`>=` is being used on a password or a string",
+            "correction": "Swap `>=` for `==`. `>=` let zebra through because zebra comes after python in the alphabet.",
+            "hint": "`>=` is for greater-or-equal, not for matching a password."
+          },
+          {
+            "id": "uses_exact_match",
+            "type": "regex",
+            "pattern": "==\\s*[\"']|[\"'][^\"']*[\"']\\s*==",
+            "pass_text": "You're checking with `==`",
+            "fail_text": "Use `==` for an exact match",
+            "correction": "Write `if password == \"python\":`.",
+            "hint": "`==` means is this exactly that."
+          },
+          {
+            "id": "has_else",
+            "type": "regex",
+            "pattern": "\\belse\\s*:",
+            "pass_text": "You have an `else` path too",
+            "fail_text": "Add an `else` for the wrong password",
+            "correction": "After the `if` block, add `else:` and print Access denied.",
+            "hint": "`else` runs only when the `if` check is false."
+          }
+        ],
+        "tests": [
+          {
+            "id": "python_granted",
+            "inputs": [
+              "python"
+            ],
+            "expected_stdout": "Access granted\n",
+            "includes": [
+              "Access granted"
+            ],
+            "case_insensitive": true,
+            "status": "ok",
+            "pass_text": "The password python gets in",
+            "fail_text": "The password python didn't get in",
+            "correction": "We typed python but didn't see Access granted.",
+            "hint": "Use `if password == \"python\":`."
+          },
+          {
+            "id": "zebra_denied",
+            "inputs": [
+              "zebra"
+            ],
+            "expected_stdout": "Access denied\n",
+            "excludes": [
+              "Access granted"
+            ],
+            "case_insensitive": true,
+            "min_input_count": 1,
+            "status": "ok",
+            "pass_text": "The password zebra is blocked",
+            "fail_text": "The password zebra got in",
+            "correction": "We typed zebra and saw Access granted. That's the `>=` bug: zebra comes after python in the alphabet.",
+            "hint": "Use `==` for an exact match."
+          }
+        ]
+      }
+    },
+    "l7": {
+      "id": "l7",
+      "tag": "L7",
+      "title": "elif and order",
+      "concept": "`elif` adds more paths. Python checks from the top and stops at the first true condition. Order matters.",
+      "skills": [
+        "python-fundamentals",
+        "evaluation"
+      ],
+      "see": {
+        "kind": "mermaid",
+        "diagram": {
+          "type": "ladder",
+          "steps": [
+            [
+              ">= 90?",
+              "A"
+            ],
+            [
+              ">= 80?",
+              "B"
+            ],
+            [
+              ">= 70?",
+              "C"
+            ]
+          ],
+          "last": "F"
+        },
+        "mermaid": "flowchart TD\n    A{\"score >= 90?\"} -->|yes| GA[A]\n    A -->|no| B{\"score >= 80?\"}\n    B -->|yes| GB[B]\n    B -->|no| C{\"score >= 70?\"}\n    C -->|yes| GC[C]\n    C -->|no| E[else] --> GF[F]",
+        "labels": [
+          "score >= 90?",
+          "A",
+          "score >= 80?",
+          "B",
+          "score >= 70?",
+          "C",
+          "else",
+          "F",
+          "Python stops at the first \"yes\"."
+        ],
+        "caption": "Python stops at the first \"yes\".",
+        "explain": "Python starts at the top of the ladder and stops at the first true check. Put the highest score check first."
+      },
+      "predict": [
+        {
+          "id": "l7-p1",
+          "code": "score = 95\nif score >= 90:\n    print(\"A\")\nelif score >= 80:\n    print(\"B\")\nelif score >= 70:\n    print(\"C\")\nelse:\n    print(\"F\")",
+          "options": [
+            "A",
+            "B",
+            "C"
+          ],
+          "correct": 0,
+          "why": "95 is >= 90, so it stops at the first check and prints A."
+        },
+        {
+          "id": "l7-p2",
+          "code": "score = 95\nif score >= 70:\n    print(\"C\")\nelif score >= 90:\n    print(\"A\")\nelse:\n    print(\"F\")",
+          "options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "correct": 1,
+          "why": "Python stops at the first true condition. 95 is also >= 70, so it never reaches the A check."
+        }
+      ],
+      "tweak": {
+        "starter": "score = 95\nif score >= 90:\n    print(\"A\")\nelif score >= 80:\n    print(\"B\")\nelif score >= 70:\n    print(\"C\")\nelse:\n    print(\"F\")\n",
+        "prompts": [
+          {
+            "change": "Run it with score = 95, then change score to 80 and run again.",
+            "expect": "95 prints A. 80 prints B."
+          },
+          {
+            "change": "Put the >= 70 check first, then run it with score = 95.",
+            "expect": "It prints C, because 95 is also >= 70 and Python never reaches A. Put >= 90 back first."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l7-f1",
+          "bug": "If you check >= 70 first, 95 gets a C, because 95 is also >= 70 and Python never reaches the A check.",
+          "broken": "score = 95\nif score >= 70:\n    print(\"C\")\nelif score >= 80:\n    print(\"B\")\nelif score >= 90:\n    print(\"A\")\nelse:\n    print(\"F\")",
+          "hint": "Put the highest threshold first. Python stops at the first true condition.",
+          "fixed": "score = 95\nif score >= 90:\n    print(\"A\")\nelif score >= 80:\n    print(\"B\")\nelif score >= 70:\n    print(\"C\")\nelse:\n    print(\"F\")"
+        }
+      ],
+      "build": {
+        "task": "Ask for a score with int(input()). Print A for 90+, B for 80+, C for 70+, and F otherwise. Put the highest check first. Leave the right order in the editor when you hit Check.",
+        "starter": "# Lesson 7: grades with if / elif / else\n",
+        "reference": "score = int(input(\"Score: \"))\nif score >= 90:\n    print(\"A\")\nelif score >= 80:\n    print(\"B\")\nelif score >= 70:\n    print(\"C\")\nelse:\n    print(\"F\")\n",
+        "rules": [
+          {
+            "id": "has_elif",
+            "type": "regex",
+            "pattern": "\\belif\\b",
+            "pass_text": "You used `elif` for more than two paths",
+            "fail_text": "This needs at least one `elif`",
+            "correction": "After your `if`, add `elif score >= 80:` and so on.",
+            "hint": "Python checks from the top and stops at the first true condition."
+          },
+          {
+            "id": "highest_first",
+            "type": "first_threshold_is_highest",
+            "pattern": ">=?\\s*(\\d+)",
+            "min_thresholds": 2,
+            "skip_if_too_few": true,
+            "pass_text": "The highest score check comes first",
+            "fail_text": "The conditions are in the wrong order",
+            "correction": "Put the highest threshold first, like `>= 90`, then `>= 80`, then `>= 70`.",
+            "hint": "If `>= 70` comes first, 95 is true right away and gets a C."
+          }
+        ],
+        "tests": [
+          {
+            "id": "score_95_is_A",
+            "inputs": [
+              "95"
+            ],
+            "expected_stdout": "A\n",
+            "nonempty_lines": [
+              "A"
+            ],
+            "status": "ok",
+            "pass_text": "A score of 95 gets an A",
+            "fail_text": "A score of 95 doesn't get an A",
+            "correction": "Put `>= 90` first.",
+            "hint": "Python stops at the first true condition."
+          },
+          {
+            "id": "score_80_is_B",
+            "inputs": [
+              "80"
+            ],
+            "expected_stdout": "B\n",
+            "nonempty_lines": [
+              "B"
+            ],
+            "status": "ok",
+            "pass_text": "A score of 80 gets a B",
+            "fail_text": "A score of 80 doesn't get a B",
+            "correction": "After `>= 90`, check `>= 80` for a B.",
+            "hint": "80 is not >= 90, but it is >= 80."
+          },
+          {
+            "id": "score_70_is_C",
+            "inputs": [
+              "70"
+            ],
+            "expected_stdout": "C\n",
+            "nonempty_lines": [
+              "C"
+            ],
+            "status": "ok",
+            "pass_text": "A score of 70 gets a C",
+            "fail_text": "A score of 70 doesn't get a C",
+            "correction": "After the B check, use `>= 70` for a C.",
+            "hint": "Order is 90, then 80, then 70."
+          },
+          {
+            "id": "score_50_is_F",
+            "inputs": [
+              "50"
+            ],
+            "expected_stdout": "F\n",
+            "nonempty_lines": [
+              "F"
+            ],
+            "status": "ok",
+            "pass_text": "A score of 50 gets an F",
+            "fail_text": "A score of 50 doesn't get an F",
+            "correction": "Add an `else:` that prints F.",
+            "hint": "else runs when none of the score checks are true."
+          }
+        ]
+      }
+    },
+    "l8": {
+      "id": "l8",
+      "tag": "L8",
+      "title": "while loops",
+      "concept": "A while loop repeats as long as a check is true. It needs three parts: SETUP, CHECK, and CHANGE.",
+      "skills": [
+        "python-fundamentals"
+      ],
+      "see": {
+        "kind": "animation",
+        "diagram": {
+          "type": "loop",
+          "setup": "password = \"\"",
+          "check": "password != \"python\"?",
+          "change": "ask again with input()",
+          "done": "Access granted",
+          "yes": "yes, still wrong",
+          "no": "no, it matches",
+          "back": "check again"
+        },
+        "animation": "Draw SETUP once at the top: password = \"\". Arrow down to a diamond CHECK: password != \"python\"? If yes, still wrong, go to CHANGE: ask again with input(). Then a looping arrow labeled check again goes back to CHECK. If no, it matches, leave the circle to Access granted. A small caption under the exit: after the loop (optional print).",
+        "mermaid": "flowchart TD\n    S[\"SETUP<br/>password = \\\"\\\"\"] --> C{\"CHECK<br/>password != \\\"python\\\"?\"}\n    C -->|yes, still wrong| CH[\"CHANGE<br/>ask again with input()\"]\n    CH -->|check again| C\n    C -->|no, it matches| D[Access granted]",
+        "labels": [
+          "SETUP",
+          "password = \"\"",
+          "CHECK",
+          "password != \"python\"?",
+          "yes, still wrong",
+          "CHANGE",
+          "ask again with input()",
+          "check again",
+          "no, it matches",
+          "Access granted",
+          "after the loop (optional print)"
+        ],
+        "explain": "SETUP gives the variable a starting value, and CHECK is the yes/no question. CHANGE updates the variable inside the loop so the check can eventually become false."
+      },
+      "predict": [
+        {
+          "id": "l8-p1",
+          "code": "n = 1\nwhile n < 3:\n    print(n)\n    n = n + 1",
+          "options": [
+            "1 then 2",
+            "1 then 2 then 3",
+            "an infinite loop"
+          ],
+          "correct": 0,
+          "why": "When n becomes 3, the CHECK n < 3 is false, so the loop stops."
+        },
+        {
+          "id": "l8-p2",
+          "code": "n = 1\nwhile n < 3:\n    print(n)",
+          "options": [
+            "1 then 2",
+            "1",
+            "an infinite loop of 1s"
+          ],
+          "correct": 2,
+          "why": "n never changes, so the CHECK stays true. Hit Stop, then add CHANGE inside the loop."
+        }
+      ],
+      "tweak": {
+        "starter": "password = \"\"\nwhile password != \"python\":\n    password = input(\"What's the password? \")\nprint(\"Access granted\")\n",
+        "prompts": [
+          {
+            "change": "Delete the input() line inside the loop, then run it.",
+            "expect": "It loops forever because CHANGE is missing. Hit Stop, then put input() back inside the loop."
+          },
+          {
+            "change": "Change the first line to password = \"python\", then run it.",
+            "expect": "The loop body never runs, because CHECK is already false. If you have a print after the loop, that print still runs. A final print is optional unless the task asks for one."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l8-f1",
+          "bug": "CHANGE is missing: input() is not inside the loop, so the password never updates and the loop never ends.",
+          "broken": "password = \"\"\nwhile password != \"python\":\n    print(\"Wrong, try again\")\nprint(\"Access granted\")",
+          "hint": "Put input() inside the loop, indented under while, and store the answer in the same variable the CHECK uses.",
+          "fixed": "password = \"\"\nwhile password != \"python\":\n    password = input(\"What's the password? \")\nprint(\"Access granted\")"
+        },
+        {
+          "id": "l8-f2",
+          "bug": "A student added stray spaces inside the quotes, and also thought a final print is required for the loop to work.",
+          "broken": "password = \"\"\nwhile password != \"python\":\n    password = input(\"What's the password? \")\nprint(\" Access granted \")",
+          "hint": "The loop is done when CHECK is false. A print after the loop is optional. If you do print something, the text inside the quotes is shown as written, so drop the extra spaces.",
+          "fixed": "password = \"\"\nwhile password != \"python\":\n    password = input(\"What's the password? \")\nprint(\"Access granted\")",
+          "note": "A final print is not required for a while loop to work. This task just happens to ask for one."
+        }
+      ],
+      "build": {
+        "task": "Write a while loop that keeps asking for the password until the answer is python. Use SETUP, CHECK, and CHANGE. A print after the loop is optional here.",
+        "starter": "# Lesson 8: SETUP, CHECK, CHANGE\n",
+        "reference": "password = \"\"\nwhile password != \"python\":\n    password = input(\"What's the password? \")\nprint(\"Access granted\")\n",
+        "rules": [
+          {
+            "id": "setup",
+            "type": "while_setup",
+            "pass_text": "SETUP: the variable has a value before the loop",
+            "fail_text": "SETUP is missing: give the variable a starting value",
+            "correction": "A starting value like `password = \"\"` lets the CHECK run the first time.",
+            "hint": "If the variable doesn't exist yet, the CHECK has nothing to look at."
+          },
+          {
+            "id": "has_while",
+            "type": "regex",
+            "pattern": "\\bwhile\\b",
+            "pass_text": "CHECK: you have a `while` line",
+            "fail_text": "CHECK is missing: this needs a `while` loop",
+            "correction": "Write `while password != \"python\":` and indent the next line.",
+            "hint": "The loop body keeps running as long as that check is true."
+          },
+          {
+            "id": "change_inside",
+            "type": "while_body_has",
+            "pattern": "\\binput\\s*\\(",
+            "pass_text": "CHANGE: `input()` is inside the loop",
+            "fail_text": "CHANGE is missing: `input()` is not inside the loop",
+            "correction": "Put `password = input(\"What's the password? \")` inside the loop, indented under `while`.",
+            "hint": "If the password never changes inside the loop, you get an infinite loop. Hit the Stop button if that happens."
+          },
+          {
+            "id": "no_stray_spaces",
+            "type": "not_regex",
+            "pattern": "print\\s*\\(\\s*[\"']\\s+Access granted|Access granted\\s+[\"']",
+            "skip_if_no_match_of": "Access granted",
+            "pass_text": "`Access granted` has no extra spaces",
+            "fail_text": "`Access granted` has extra spaces inside the quotes",
+            "correction": "Remove the stray spaces so it prints exactly `Access granted`.",
+            "hint": "A print after the loop is optional, but if you add one, the text inside the quotes is shown as written."
+          }
+        ],
+        "tests": [
+          {
+            "id": "stops_after_python",
+            "inputs": [
+              "hello",
+              "zebra",
+              "python"
+            ],
+            "expected_stdout": "Access granted\n",
+            "input_count": 3,
+            "status": "ok",
+            "out_of_inputs_is_fail": true,
+            "pass_text": "The loop stops right after python",
+            "fail_text": "The loop didn't stop at the right time",
+            "correction": "We typed hello, zebra, python. It should ask 3 times and stop.",
+            "hint": "input() goes inside the loop, and the CHECK compares to \"python\".",
+            "fail_if_out_of_inputs": {
+              "fail_text": "The loop kept asking after we typed python",
+              "correction": "We answered hello, zebra, then python, but it asked again. The CHECK never became false.",
+              "hint": "Make sure the CHECK compares the same variable that input() updates, like `while password != \"python\":`."
+            }
+          }
+        ]
+      }
+    },
+    "warmup": {
+      "id": "warmup",
+      "tag": "Warm-up",
+      "title": "Password loop",
+      "concept": "This is a short refresher after the break, not a new idea. Same three-part while loop you already know.",
+      "skills": [
+        "python-fundamentals",
+        "safety"
+      ],
+      "see": {
+        "kind": "animation",
+        "diagram": {
+          "type": "loop",
+          "setup": "password = \"\"",
+          "check": "until the answer is python",
+          "change": "input(\"What's the password? \")",
+          "done": "Access granted",
+          "yes": "keep asking",
+          "no": "got it",
+          "back": ""
+        },
+        "animation": "Same three-part loop picture as Lesson 8, with these exact labels: SETUP password = \"\"; CHECK until the answer is python; CHANGE input(\"What's the password? \"); yes arrow keep asking; no arrow got it; exit Access granted.",
+        "mermaid": "flowchart TD\n    S[\"SETUP<br/>password = \\\"\\\"\"] --> C{\"CHECK<br/>until the answer is python\"}\n    C -->|keep asking| CH[\"CHANGE<br/>input(\\\"What's the password? \\\")\"]\n    CH --> C\n    C -->|got it| D[Access granted]",
+        "labels": [
+          "SETUP",
+          "password = \"\"",
+          "CHECK",
+          "until the answer is python",
+          "keep asking",
+          "CHANGE",
+          "input(\"What's the password? \")",
+          "got it",
+          "Access granted"
+        ],
+        "explain": "SETUP before the loop, CHECK at the top, CHANGE inside. That's the pattern that keeps you out of an infinite loop."
+      },
+      "predict": [
+        {
+          "id": "warmup-p1",
+          "code": "password = \"python\"\nwhile password != \"python\":\n    password = input(\"What's the password? \")\nprint(\"Access granted\")",
+          "options": [
+            "Access granted, and it never asks",
+            "It asks once, then Access granted",
+            "an infinite loop"
+          ],
+          "correct": 0,
+          "why": "SETUP already matches, so CHECK is false the first time. The print after the loop still runs."
+        },
+        {
+          "id": "warmup-p2",
+          "code": "password = \"\"\nwhile password != \"python\":\n    password = input(\"What's the password? \")",
+          "options": [
+            "It works, but there is no final message",
+            "Python shows an error",
+            "This is an infinite loop"
+          ],
+          "correct": 0,
+          "why": "A print after the loop is optional. This warm-up task happens to ask for one."
+        }
+      ],
+      "tweak": {
+        "starter": "password = \"\"\nwhile password != \"python\":\n    password = input(\"What's the password? \")\nprint(\"Access granted\")\n",
+        "prompts": [
+          {
+            "change": "Run it and type hello, then zebra, then python.",
+            "expect": "It asks three times, then prints Access granted once."
+          },
+          {
+            "change": "Indent print(\"Access granted\") so it sits inside the loop, then type hello, zebra, python.",
+            "expect": "It prints Access granted after every try, including the wrong ones. Move the print back under the loop, not inside it."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "warmup-f1",
+          "bug": "The loop asks forever because input() is not inside it, so the password never changes.",
+          "broken": "password = input(\"What's the password? \")\nwhile password != \"python\":\n    print(\"Wrong\")\nprint(\"Access granted\")",
+          "hint": "input() has to run again on every pass. Put it inside the loop.",
+          "fixed": "password = \"\"\nwhile password != \"python\":\n    password = input(\"What's the password? \")\nprint(\"Access granted\")"
+        }
+      ],
+      "build": {
+        "task": "Write a program that asks \"What's the password? \", keeps asking until the answer is `python`, then prints `Access granted`. Run it, then hit Check.",
+        "starter": "# Warm-up: keep asking for the password until it's python\n",
+        "reference": "password = \"\"\nwhile password != \"python\":\n    password = input(\"What's the password? \")\nprint(\"Access granted\")\n",
+        "rules": [
+          {
+            "id": "setup",
+            "type": "while_setup",
+            "pass_text": "SETUP: the variable has a value before the loop",
+            "fail_text": "SETUP is missing: give the variable a starting value",
+            "correction": "A starting value like `password = \"\"` lets the CHECK run the first time.",
+            "hint": "If the variable doesn't exist yet, the CHECK has nothing to look at."
+          },
+          {
+            "id": "has_while",
+            "type": "regex",
+            "pattern": "\\bwhile\\b",
+            "pass_text": "CHECK: you have a `while` line",
+            "fail_text": "CHECK is missing: this needs a `while` loop",
+            "correction": "Write `while password != \"python\":` and indent the next line.",
+            "hint": "The loop body keeps running as long as that check is true."
+          },
+          {
+            "id": "change_inside",
+            "type": "while_body_has",
+            "pattern": "\\binput\\s*\\(",
+            "pass_text": "CHANGE: `input()` is inside the loop",
+            "fail_text": "CHANGE is missing: `input()` is not inside the loop",
+            "correction": "Put `password = input(\"What's the password? \")` inside the loop, indented under `while`.",
+            "hint": "If the password never changes inside the loop, you get an infinite loop. Hit the Stop button if that happens."
+          },
+          {
+            "id": "waits_for_python",
+            "type": "regex",
+            "pattern": "[\"']python[\"']",
+            "pass_text": "The loop waits for the password `python`",
+            "fail_text": "The warm-up password should be `python`",
+            "correction": "Keep asking until the answer is exactly `python`.",
+            "hint": "`==` and `!=` care about exact spelling and spaces."
+          },
+          {
+            "id": "prints_granted_clean",
+            "type": "all_of",
+            "all_of": [
+              {
+                "type": "regex",
+                "pattern": "Access granted",
+                "flags": "i"
+              },
+              {
+                "type": "not_regex",
+                "pattern": "print\\s*\\(\\s*[\"']\\s+Access granted|Access granted\\s+[\"']"
+              }
+            ],
+            "pass_text": "You print Access granted when the loop is done",
+            "fail_text": "After the loop, print Access granted (with no extra spaces)",
+            "correction": "When the CHECK is false, Python leaves the loop. That's the place for `print(\"Access granted\")`. Remove any stray spaces inside the quotes.",
+            "hint": "Spaces inside quotes show up in the output."
+          }
+        ],
+        "tests": [
+          {
+            "id": "stops_after_python",
+            "inputs": [
+              "hello",
+              "zebra",
+              "python"
+            ],
+            "expected_stdout": "Access granted\n",
+            "input_count": 3,
+            "status": "ok",
+            "out_of_inputs_is_fail": true,
+            "pass_text": "The loop stops right after python",
+            "fail_text": "The loop didn't stop at the right time",
+            "correction": "We typed hello, zebra, python. It should ask 3 times and stop.",
+            "hint": "input() goes inside the loop, and the CHECK compares to \"python\".",
+            "fail_if_out_of_inputs": {
+              "fail_text": "The loop kept asking after we typed python",
+              "correction": "We answered hello, zebra, then python, but it asked again. The CHECK never became false.",
+              "hint": "Make sure the CHECK compares the same variable that input() updates, like `while password != \"python\":`."
+            }
+          },
+          {
+            "id": "granted_once_at_end",
+            "inputs": [
+              "hello",
+              "zebra",
+              "python"
+            ],
+            "expected_stdout": "Access granted\n",
+            "last_line_norm": "access granted",
+            "includes_count": {
+              "Access granted": 1
+            },
+            "case_insensitive": true,
+            "status": "ok",
+            "pass_text": "It prints Access granted once, at the end",
+            "fail_text": "Access granted isn't printed once at the end",
+            "correction": "We expected the last line to be Access granted, and only after python.",
+            "hint": "Put the print after the loop, not indented inside it."
+          }
+        ]
+      }
+    },
+    "l9": {
+      "id": "l9",
+      "tag": "L9",
+      "title": "Lists and for loops",
+      "concept": "A list is a row of items in brackets. The first item is index 0, not 1. `len()` counts the items. A for loop walks through each item, one at a time.",
+      "skills": [
+        "python-fundamentals",
+        "data-handling"
+      ],
+      "see": {
+        "kind": "svg",
+        "diagram": {
+          "type": "list",
+          "items": [
+            "chicken",
+            "tacos",
+            "pizza"
+          ]
+        },
+        "svg": "A 340px-wide row of three boxes under the caption foods = [ … ] len(foods) is 3. Box 0: chicken, label foods[0]. Box 1: tacos, label foods[1]. Box 2: pizza, label foods[2]. Arrows from the boxes down to one terminal: for food in foods: print(\"I like \" + food). Caption: one pass per item: chicken, then tacos, then pizza.",
+        "mermaid": "flowchart TD\n    L[\"foods = [ … ]  len(foods) is 3\"]\n    L --> I0[\"foods[0]<br/>chicken\"]\n    L --> I1[\"foods[1]<br/>tacos\"]\n    L --> I2[\"foods[2]<br/>pizza\"]\n    I0 --> F[\"for food in foods:<br/>print(\\\"I like \\\" + food)\"]\n    I1 --> F\n    I2 --> F",
+        "labels": [
+          "foods = [ … ]",
+          "len(foods) is 3",
+          "chicken",
+          "foods[0]",
+          "tacos",
+          "foods[1]",
+          "pizza",
+          "foods[2]",
+          "for food in foods:",
+          "print(\"I like \" + food)",
+          "one pass per item: chicken, then tacos, then pizza"
+        ],
+        "explain": "The first box is foods[0], not foods[1]. A for loop takes each item in order, calls it food, and runs the indented lines once per item."
+      },
+      "predict": [
+        {
+          "id": "l9-p1",
+          "code": "foods = [\"chicken\", \"tacos\", \"pizza\"]\nprint(foods[0])",
+          "options": [
+            "chicken",
+            "tacos",
+            "pizza"
+          ],
+          "correct": 0,
+          "why": "Counting starts at 0, so foods[0] is the first item."
+        },
+        {
+          "id": "l9-p2",
+          "code": "foods = [\"chicken\", \"tacos\", \"pizza\"]\nprint(len(foods))\nprint(foods[1])",
+          "options": [
+            "3 then tacos",
+            "3 then chicken",
+            "2 then tacos"
+          ],
+          "correct": 0,
+          "why": "len counts the items (3). foods[1] is the second item."
+        }
+      ],
+      "tweak": {
+        "starter": "foods = [\"chicken\", \"tacos\", \"pizza\"]\nprint(foods[0])\nprint(len(foods))\n",
+        "prompts": [
+          {
+            "change": "Change foods[0] to foods[1], then run it.",
+            "expect": "It prints tacos, not chicken. foods[1] is the second item."
+          },
+          {
+            "change": "Add \"burgers\" and \"sushi\" to the list, then print len(foods) again.",
+            "expect": "len(foods) is 5. The last index is 4, not 5."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l9-f1",
+          "bug": "foods[1] was used as if it were the first item. Counting starts at 0.",
+          "broken": "foods = [\"chicken\", \"tacos\", \"pizza\"]\nprint(foods[1])",
+          "hint": "The first item is foods[0]. foods[1] is the second item.",
+          "fixed": "foods = [\"chicken\", \"tacos\", \"pizza\"]\nprint(foods[0])"
+        },
+        {
+          "id": "l9-f2",
+          "bug": "The running total never starts at 0, and nothing is added inside the loop.",
+          "broken": "numbers = [3, 5, 7]\ntotal = 0\nfor number in numbers:\n    print(number)\nprint(total)",
+          "hint": "SETUP the total at 0, then CHANGE it each pass with total = total + number.",
+          "fixed": "numbers = [3, 5, 7]\ntotal = 0\nfor number in numbers:\n    total = total + number\nprint(total)"
+        }
+      ],
+      "build": {
+        "task": "Keep the three starter foods and add two more. Print foods[0] and len(foods). Then make numbers = [3, 5, 7], start with total = 0, add each number with a for loop, and print the total.",
+        "starter": "# Lesson 9: lists and for loops\nfoods = [\"chicken\", \"tacos\", \"pizza\"]\n",
+        "reference": "foods = [\"chicken\", \"tacos\", \"pizza\", \"burgers\", \"sushi\"]\nprint(foods[0])\nprint(len(foods))\nfor food in foods:\n    print(\"I like \" + food)\nnumbers = [3, 5, 7]\ntotal = 0\nfor number in numbers:\n    total = total + number\nprint(total)\n",
+        "rules": [
+          {
+            "id": "has_list",
+            "type": "regex",
+            "pattern": "\\[[^\\]]*\\]",
+            "pass_text": "You made a list in square brackets",
+            "fail_text": "Make a list in square brackets `[]`",
+            "correction": "Start with `foods = [\"chicken\", \"tacos\", \"pizza\"]`, then add two more foods.",
+            "hint": "The first item is `foods[0]`, not `foods[1]`. Counting starts at 0."
+          },
+          {
+            "id": "has_for",
+            "type": "regex",
+            "pattern": "\\bfor\\s+[A-Za-z_]\\w*\\s+in\\s+",
+            "pass_text": "You used a `for` loop to walk through a list",
+            "fail_text": "Add a `for` loop that walks through a list",
+            "correction": "Write `for food in foods:` and then `print(\"I like \" + food)`.",
+            "hint": "`for food in foods` means: take each item, call it food, and run the indented lines."
+          },
+          {
+            "id": "has_len",
+            "type": "regex",
+            "pattern": "\\blen\\s*\\(",
+            "pass_text": "You used `len()` to count the items",
+            "fail_text": "Use `len(foods)` to count the items",
+            "correction": "Add `print(len(foods))`.",
+            "hint": "With 5 foods, len(foods) is 5, but the last index is 4."
+          },
+          {
+            "id": "total_zero",
+            "type": "regex",
+            "pattern": "total\\s*=\\s*0",
+            "pass_text": "The sum starts at `total = 0`",
+            "fail_text": "Start the sum with `total = 0`",
+            "correction": "Before the loop, write `total = 0`.",
+            "hint": "This is SETUP for a running total, the same idea you used with while loops."
+          },
+          {
+            "id": "total_add",
+            "type": "regex",
+            "pattern": "total\\s*=\\s*total\\s*\\+|total\\s*\\+=",
+            "pass_text": "You add each number with `total = total +`",
+            "fail_text": "Add each number with `total = total + number`",
+            "correction": "Inside the loop, write `total = total + number`, then print `total` when you're done.",
+            "hint": "Make a list of three numbers and let the loop do the adding."
+          }
+        ],
+        "tests": [
+          {
+            "id": "first_item_chicken",
+            "inputs": [],
+            "expected_stdout": "chicken\n5\nI like chicken\nI like tacos\nI like pizza\nI like burgers\nI like sushi\n15\n",
+            "nonempty_lines_include": [
+              "chicken"
+            ],
+            "status": "ok",
+            "pass_text": "It prints foods[0], which should be chicken",
+            "fail_text": "It doesn't print chicken as the first item",
+            "correction": "Keep the starter list and print `foods[0]`.",
+            "hint": "Counting starts at 0, so foods[0] is chicken."
+          },
+          {
+            "id": "len_is_5",
+            "inputs": [],
+            "regex": "(?m)^5$",
+            "status": "ok",
+            "pass_text": "It prints 5, the new length of the food list",
+            "fail_text": "It doesn't print 5 for the length",
+            "correction": "Add two foods, then `print(len(foods))`.",
+            "hint": "Three starter foods plus two more is 5.",
+            "expected_stdout": "chicken\n5\nI like chicken\nI like tacos\nI like pizza\nI like burgers\nI like sushi\n15\n"
+          },
+          {
+            "id": "likes_and_total",
+            "inputs": [],
+            "includes": [
+              "I like chicken",
+              "I like tacos",
+              "I like pizza"
+            ],
+            "regex": "(?m)^15$",
+            "min_nonempty_lines": 8,
+            "status": "ok",
+            "pass_text": "It prints each food and the total 15",
+            "fail_text": "The loop or the total is missing",
+            "correction": "Print each food with a for loop, then print the total of 3, 5, and 7, which is 15.",
+            "hint": "A for loop prints once per item. total = total + number adds as it goes.",
+            "expected_stdout": "chicken\n5\nI like chicken\nI like tacos\nI like pizza\nI like burgers\nI like sushi\n15\n"
+          }
+        ]
+      }
+    },
+    "l10": {
+      "id": "l10",
+      "tag": "L10",
+      "title": "Functions",
+      "concept": "A function is a named recipe. You write it once with `def`, then call it whenever you need those steps.",
+      "skills": [
+        "python-fundamentals",
+        "agents-tool-use"
+      ],
+      "see": {
+        "kind": "mermaid",
+        "diagram": {
+          "type": "chain",
+          "nodes": [
+            {
+              "label": "You call",
+              "detail": "greet(\"Cole\")"
+            },
+            {
+              "label": "def greet(name):",
+              "detail": "name is Cole inside"
+            },
+            {
+              "label": "The screen shows",
+              "detail": "Hello, Cole",
+              "kind": "terminal"
+            }
+          ],
+          "edgeLabels": [
+            "jumps to the recipe",
+            "runs the body"
+          ]
+        },
+        "mermaid": "flowchart TD\n    A[\"You call<br/>greet(\\\"Cole\\\")\"] -->|jumps to the recipe| B[\"def greet(name):<br/>name is Cole inside\"]\n    B -->|runs the body| C[\"The screen shows<br/>Hello, Cole\"]",
+        "labels": [
+          "You call",
+          "greet(\"Cole\")",
+          "jumps to the recipe",
+          "def greet(name):",
+          "name is Cole inside",
+          "runs the body",
+          "The screen shows",
+          "Hello, Cole"
+        ],
+        "explain": "The name in parentheses is a parameter, a blank the caller fills in. When you write greet(\"Cole\"), that blank is Cole for this one call."
+      },
+      "predict": [
+        {
+          "id": "l10-p1",
+          "code": "def greet(name):\n    print(\"Hello, \" + name)\n\ngreet(\"Cole\")",
+          "options": [
+            "Hello, Cole",
+            "Hello, name",
+            "nothing"
+          ],
+          "correct": 0,
+          "why": "The function uses the value you passed in, which is Cole."
+        },
+        {
+          "id": "l10-p2",
+          "code": "def add_one(n):\n    return n + 1\n\nprint(add_one(5))\nprint(add_one(5) + 1)",
+          "options": [
+            "6 then 7",
+            "6 then 61",
+            "5 then 6"
+          ],
+          "correct": 0,
+          "why": "add_one(5) gives back 6. Then 6 + 1 is 7. return sends a value back to the caller."
+        }
+      ],
+      "tweak": {
+        "starter": "def greet(name):\n    print(\"Hello, \" + name)\n\ngreet(\"Cole\")\n",
+        "prompts": [
+          {
+            "change": "Change greet(\"Cole\") to greet(\"Maya\"), then run it.",
+            "expect": "It prints Hello, Maya."
+          },
+          {
+            "change": "Add a second call, greet(\"Cole\"), under the first one.",
+            "expect": "Two lines appear, one for each call. The recipe is reused."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l10-f1",
+          "bug": "The function is defined but never called, so nothing prints.",
+          "broken": "def greet(name):\n    print(\"Hello, \" + name)\n",
+          "hint": "A def line only writes the recipe. You still have to call it, like greet(\"Cole\").",
+          "fixed": "def greet(name):\n    print(\"Hello, \" + name)\n\ngreet(\"Cole\")"
+        },
+        {
+          "id": "l10-f2",
+          "bug": "The call happens before the def, so Python does not know greet yet.",
+          "broken": "greet(\"Cole\")\n\ndef greet(name):\n    print(\"Hello, \" + name)",
+          "hint": "Define the function first, then call it.",
+          "fixed": "def greet(name):\n    print(\"Hello, \" + name)\n\ngreet(\"Cole\")"
+        }
+      ],
+      "build": {
+        "task": "Write a function greet(name) that prints \"Hello, \" + name. Call it with \"Cole\". Then ask for a name with input() and call greet with that answer.",
+        "starter": "# Lesson 10: functions\n",
+        "reference": "def greet(name):\n    print(\"Hello, \" + name)\n\ngreet(\"Cole\")\nperson = input(\"What's your name? \")\ngreet(person)\n",
+        "rules": [
+          {
+            "id": "has_def_greet",
+            "type": "regex",
+            "pattern": "\\bdef\\s+greet\\s*\\(",
+            "pass_text": "You defined a function named `greet`",
+            "fail_text": "Define a function with `def greet(name):`",
+            "correction": "Start with `def greet(name):` and indent `print(\"Hello, \" + name)`.",
+            "hint": "The def line names the recipe and its blank (the parameter)."
+          },
+          {
+            "id": "calls_greet",
+            "type": "regex",
+            "pattern": "\\bgreet\\s*\\(",
+            "min_matches": 2,
+            "pass_text": "You called `greet` (the def line plus at least one call)",
+            "fail_text": "Call `greet` after you define it",
+            "correction": "After the function, write `greet(\"Cole\")`. Then ask for a name and call it again.",
+            "hint": "Defining a function does not run it. The call is what runs it."
+          },
+          {
+            "id": "has_input",
+            "type": "regex",
+            "pattern": "\\binput\\s*\\(",
+            "pass_text": "You asked for a name with `input()`",
+            "fail_text": "Ask for a name and pass it to `greet`",
+            "correction": "Use `person = input(\"What's your name? \")` then `greet(person)`.",
+            "hint": "The answer is a string, which greet already knows how to use."
+          },
+          {
+            "id": "hello_text",
+            "type": "regex",
+            "pattern": "Hello,\\s",
+            "pass_text": "The greeting includes `Hello, ` with a space",
+            "fail_text": "Print `Hello, ` plus the name",
+            "correction": "Inside the function, `print(\"Hello, \" + name)` keeps a space after the comma.",
+            "hint": "The space has to live inside the quotes, same idea as Lesson 4."
+          }
+        ],
+        "tests": [
+          {
+            "id": "greets_cole_and_maya",
+            "inputs": [
+              "Maya"
+            ],
+            "expected_stdout": "Hello, Cole\nHello, Maya\n",
+            "includes": [
+              "Hello, Cole",
+              "Hello, Maya"
+            ],
+            "input_count": 1,
+            "status": "ok",
+            "pass_text": "It greets Cole, then greets the name we typed (Maya)",
+            "fail_text": "It didn't print both Hello, Cole and Hello, Maya",
+            "correction": "Call `greet(\"Cole\")`, then ask for a name and call `greet` with the answer. We typed Maya.",
+            "hint": "The function should run twice: once with Cole, once with the input."
+          }
+        ]
+      }
+    },
+    "l11": {
+      "id": "l11",
+      "tag": "L11",
+      "title": "Dictionaries",
+      "concept": "A dictionary is a labeled box, not a numbered row. You look things up by the label (the key), not by a position number.",
+      "skills": [
+        "python-fundamentals",
+        "data-handling"
+      ],
+      "see": {
+        "kind": "svg",
+        "diagram": {
+          "type": "pairs",
+          "pairs": [
+            [
+              {
+                "label": "person[\"city\"]",
+                "detail": "lookup by label"
+              },
+              {
+                "label": "Austin",
+                "detail": "the value",
+                "kind": "terminal"
+              }
+            ],
+            [
+              {
+                "label": "person[0]",
+                "detail": "like a list index"
+              },
+              {
+                "label": "KeyError",
+                "detail": "no label called 0",
+                "kind": "terminal"
+              }
+            ]
+          ]
+        },
+        "svg": "A card titled person with two labeled rows: name → Cole, city → Austin. An arrow from person[\"city\"] to Austin. A second, faded arrow from person[0] to a KeyError box, to show list-style indexes do not work here.",
+        "mermaid": "flowchart LR\n    P[\"person<br/>name → Cole<br/>city → Austin\"] -->|person['city']| V[Austin]\n    P -->|person[0]| E[KeyError]",
+        "labels": [
+          "person",
+          "name",
+          "Cole",
+          "city",
+          "Austin",
+          "person[\"city\"]",
+          "person[0]",
+          "KeyError"
+        ],
+        "explain": "The key is the label on the left, so person[\"city\"] means give me the value for city. There is no person[0] unless you actually made a key named 0."
+      },
+      "predict": [
+        {
+          "id": "l11-p1",
+          "code": "person = {\"name\": \"Cole\", \"city\": \"Austin\"}\nprint(person[\"city\"])",
+          "options": [
+            "Austin",
+            "city",
+            "Cole"
+          ],
+          "correct": 0,
+          "why": "You look up a dictionary by its label. The city label stores Austin."
+        },
+        {
+          "id": "l11-p2",
+          "code": "person = {\"name\": \"Cole\", \"city\": \"Austin\"}\nprint(person[\"name\"])\nperson[\"city\"] = \"Dallas\"\nprint(person[\"city\"])",
+          "options": [
+            "Cole then Dallas",
+            "Cole then Austin",
+            "Austin then Dallas"
+          ],
+          "correct": 0,
+          "why": "person[\"city\"] = \"Dallas\" updates that label. The next lookup sees the new value."
+        }
+      ],
+      "tweak": {
+        "starter": "person = {\"name\": \"Cole\", \"city\": \"Austin\"}\nprint(person[\"city\"])\n",
+        "prompts": [
+          {
+            "change": "Change the lookup from person[\"city\"] to person[\"name\"], then run it.",
+            "expect": "It prints Cole."
+          },
+          {
+            "change": "Add person[\"city\"] = \"Dallas\" and print person[\"city\"] again.",
+            "expect": "It prints Dallas. The label now points at the new value."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l11-f1",
+          "bug": "A dictionary is not a list. person[0] looks for a key named 0, and that key is not there.",
+          "broken": "person = {\"name\": \"Cole\", \"city\": \"Austin\"}\nprint(person[0])",
+          "hint": "Use the label, like person[\"name\"] or person[\"city\"].",
+          "fixed": "person = {\"name\": \"Cole\", \"city\": \"Austin\"}\nprint(person[\"city\"])"
+        },
+        {
+          "id": "l11-f2",
+          "bug": "Keys are case-sensitive. \"City\" is not the same label as \"city\".",
+          "broken": "person = {\"name\": \"Cole\", \"city\": \"Austin\"}\nprint(person[\"City\"])",
+          "hint": "Match the key exactly, including lowercase.",
+          "fixed": "person = {\"name\": \"Cole\", \"city\": \"Austin\"}\nprint(person[\"city\"])"
+        }
+      ],
+      "build": {
+        "task": "Make a dictionary named person with name \"Cole\", city \"Austin\", and food \"pizza\". Print person[\"city\"]. Ask for a new food, store it in person[\"food\"], then print person[\"food\"].",
+        "starter": "# Lesson 11: dictionaries\n",
+        "reference": "person = {\"name\": \"Cole\", \"city\": \"Austin\", \"food\": \"pizza\"}\nprint(person[\"city\"])\nperson[\"food\"] = input(\"New food: \")\nprint(person[\"food\"])\n",
+        "rules": [
+          {
+            "id": "has_dict",
+            "type": "regex",
+            "pattern": "\\{[^}]*[:]",
+            "pass_text": "You made a dictionary with `{` `}` and keys",
+            "fail_text": "Make a dictionary in curly braces, with keys and values",
+            "correction": "Write `person = {\"name\": \"Cole\", \"city\": \"Austin\", \"food\": \"pizza\"}`.",
+            "hint": "A dictionary uses labels, like \"city\": \"Austin\"."
+          },
+          {
+            "id": "lookup_city",
+            "type": "regex",
+            "pattern": "person\\s*\\[\\s*[\"']city[\"']\\s*\\]",
+            "pass_text": "You looked up `person[\"city\"]`",
+            "fail_text": "Print `person[\"city\"]`",
+            "correction": "Add `print(person[\"city\"])`.",
+            "hint": "The key goes inside quotes, inside the square brackets."
+          },
+          {
+            "id": "update_food",
+            "type": "regex",
+            "pattern": "person\\s*\\[\\s*[\"']food[\"']\\s*\\]\\s*=",
+            "pass_text": "You updated `person[\"food\"]`",
+            "fail_text": "Store the new food in `person[\"food\"]`",
+            "correction": "Use `person[\"food\"] = input(\"New food: \")`.",
+            "hint": "The same lookup syntax on the left side updates the value."
+          },
+          {
+            "id": "has_input",
+            "type": "regex",
+            "pattern": "\\binput\\s*\\(",
+            "pass_text": "You asked for the new food with `input()`",
+            "fail_text": "Ask for a new food with `input()`",
+            "correction": "Put a space at the end of the prompt, like `input(\"New food: \")`.",
+            "hint": "input() always gives you a string, which is what a dictionary value can store."
+          }
+        ],
+        "tests": [
+          {
+            "id": "city_then_new_food",
+            "inputs": [
+              "tacos"
+            ],
+            "expected_stdout": "Austin\ntacos\n",
+            "includes": [
+              "Austin",
+              "tacos"
+            ],
+            "input_count": 1,
+            "status": "ok",
+            "pass_text": "It prints Austin, then the new food we typed (tacos)",
+            "fail_text": "It didn't print both Austin and tacos",
+            "correction": "Print person[\"city\"] first. Then ask for a food, save it on person[\"food\"], and print that.",
+            "hint": "We typed tacos as the new food."
+          }
+        ]
+      }
+    },
+    "l12": {
+      "id": "l12",
+      "tag": "L12",
+      "title": "Mini chat",
+      "concept": "This is the Phase 0 finish line: a tiny chat program. You'll put input(), if/elif, and a while loop together so the program keeps talking until you say bye.",
+      "skills": [
+        "python-fundamentals",
+        "data-handling",
+        "agents-tool-use",
+        "safety"
+      ],
+      "see": {
+        "kind": "animation",
+        "diagram": {
+          "type": "loop",
+          "setup": "name, then msg = \"\"",
+          "check": "msg != \"bye\"?",
+          "change": "msg = input(\"You: \")",
+          "done": "Bye <name>!",
+          "yes": "pick a reply",
+          "no": "got bye",
+          "back": "ask again"
+        },
+        "animation": "First, a SETUP box: ask What's your name? and print Hi <name>! Type bye to quit. Then the familiar while-loop circle. CHECK: msg != \"bye\"? If yes, CHANGE with msg = input(\"You: \"), then a small branch: help → I know: help, name, bye; name → You are <name>; else → I heard: <msg>. Arrow back to CHECK, labeled ask again. If CHECK is no (got bye), exit to Bye <name>!.",
+        "mermaid": "flowchart TD\n    N[\"SETUP<br/>ask name, greet, msg = \\\"\\\"\"] --> C{\"CHECK<br/>msg != \\\"bye\\\"?\"}\n    C -->|pick a reply| I[\"CHANGE<br/>msg = input(\\\"You: \\\")\"]\n    I --> H{\"if / elif / else\"}\n    H -->|help| R1[I know: help, name, bye]\n    H -->|name| R2[You are name]\n    H -->|other| R3[I heard: msg]\n    H -->|bye| D[Bye name!]\n    R1 -->|ask again| C\n    R2 --> C\n    R3 --> C\n    C -->|got bye| D",
+        "labels": [
+          "SETUP",
+          "ask name, greet, msg = \"\"",
+          "CHECK",
+          "msg != \"bye\"?",
+          "pick a reply",
+          "CHANGE",
+          "msg = input(\"You: \")",
+          "if / elif / else",
+          "I know: help, name, bye",
+          "You are name",
+          "I heard: msg",
+          "ask again",
+          "got bye",
+          "Bye name!"
+        ],
+        "explain": "The loop keeps asking until the message is exactly bye, and if/elif picks one reply each pass. That is the same shape as an agent choosing a tool."
+      },
+      "predict": [
+        {
+          "id": "l12-p1",
+          "code": "msg = \"help\"\nif msg == \"bye\":\n    print(\"Bye!\")\nelif msg == \"help\":\n    print(\"I know: help, name, bye\")\nelse:\n    print(\"I heard: \" + msg)",
+          "options": [
+            "I know: help, name, bye",
+            "Bye!",
+            "I heard: help"
+          ],
+          "correct": 0,
+          "why": "elif checks the next path. help matches the second check, so it never reaches else."
+        },
+        {
+          "id": "l12-p2",
+          "code": "msg = \"bye\"\nwhile msg != \"bye\":\n    print(\"still going\")\nprint(\"done\")",
+          "options": [
+            "done",
+            "still going then done",
+            "an infinite loop"
+          ],
+          "correct": 0,
+          "why": "CHECK is false right away, so the loop body never runs. Then the print after the loop runs."
+        }
+      ],
+      "tweak": {
+        "starter": "name = input(\"What's your name? \")\nprint(\"Hi \" + name + \"! Type bye to quit.\")\nmsg = \"\"\nwhile msg != \"bye\":\n    msg = input(\"You: \")\n    if msg == \"bye\":\n        print(\"Bye \" + name + \"!\")\n    elif msg == \"help\":\n        print(\"I know: help, name, bye\")\n    elif msg == \"name\":\n        print(\"You are \" + name)\n    else:\n        print(\"I heard: \" + msg)\n",
+        "prompts": [
+          {
+            "change": "Add an elif for \"food\" that prints I like pizza, then type food before bye.",
+            "expect": "The food command takes that new path. Other commands still work."
+          },
+          {
+            "change": "Change the loop so it stops on quit instead of bye, then type bye, then quit.",
+            "expect": "bye is treated like any other message (I heard: bye). Only quit ends the loop. Change it back to bye before you hit Check."
+          }
+        ]
+      },
+      "fix": [
+        {
+          "id": "l12-f1",
+          "bug": "The chat asks for a first message outside the loop and never asks again, so it cannot reach bye unless that first answer already was bye.",
+          "broken": "name = input(\"What's your name? \")\nprint(\"Hi \" + name + \"! Type bye to quit.\")\nmsg = input(\"You: \")\nwhile msg != \"bye\":\n    if msg == \"help\":\n        print(\"I know: help, name, bye\")\n    elif msg == \"name\":\n        print(\"You are \" + name)\n    else:\n        print(\"I heard: \" + msg)\nprint(\"Bye \" + name + \"!\")",
+          "hint": "Put input() inside the loop so every pass can get a new message, including bye.",
+          "fixed": "name = input(\"What's your name? \")\nprint(\"Hi \" + name + \"! Type bye to quit.\")\nmsg = \"\"\nwhile msg != \"bye\":\n    msg = input(\"You: \")\n    if msg == \"bye\":\n        print(\"Bye \" + name + \"!\")\n    elif msg == \"help\":\n        print(\"I know: help, name, bye\")\n    elif msg == \"name\":\n        print(\"You are \" + name)\n    else:\n        print(\"I heard: \" + msg)\n"
+        },
+        {
+          "id": "l12-f2",
+          "bug": "A broad else-if is in the wrong order, or bye is checked with the wrong comparison, so the quit path never runs cleanly.",
+          "broken": "name = input(\"What's your name? \")\nprint(\"Hi \" + name + \"! Type bye to quit.\")\nmsg = \"\"\nwhile msg != \"bye\":\n    msg = input(\"You: \")\n    if msg == \"help\":\n        print(\"I know: help, name, bye\")\n    elif msg == \"name\":\n        print(\"You are \" + name)\n    else:\n        print(\"I heard: \" + msg)\n",
+          "hint": "Handle bye inside the loop (or break on bye) so the program prints Bye <name>! and stops. Don't leave bye to the else path.",
+          "fixed": "name = input(\"What's your name? \")\nprint(\"Hi \" + name + \"! Type bye to quit.\")\nmsg = \"\"\nwhile msg != \"bye\":\n    msg = input(\"You: \")\n    if msg == \"bye\":\n        print(\"Bye \" + name + \"!\")\n    elif msg == \"help\":\n        print(\"I know: help, name, bye\")\n    elif msg == \"name\":\n        print(\"You are \" + name)\n    else:\n        print(\"I heard: \" + msg)\n"
+        }
+      ],
+      "build": {
+        "task": "Build the mini chat. Ask \"What's your name? \" and print Hi <name>! Type bye to quit. Then loop with input(\"You: \") until the message is exactly bye. Commands: help prints I know: help, name, bye; name prints You are <name>; bye prints Bye <name>!; anything else prints I heard: <msg>.",
+        "starter": "# Lesson 12: mini chat\n",
+        "reference": "name = input(\"What's your name? \")\nprint(\"Hi \" + name + \"! Type bye to quit.\")\nmsg = \"\"\nwhile msg != \"bye\":\n    msg = input(\"You: \")\n    if msg == \"bye\":\n        print(\"Bye \" + name + \"!\")\n    elif msg == \"help\":\n        print(\"I know: help, name, bye\")\n    elif msg == \"name\":\n        print(\"You are \" + name)\n    else:\n        print(\"I heard: \" + msg)\n",
+        "rules": [
+          {
+            "id": "has_input",
+            "type": "regex",
+            "pattern": "\\binput\\s*\\(",
+            "pass_text": "You used `input()` to ask questions",
+            "fail_text": "This needs `input()` for the name and for each message",
+            "correction": "Ask `input(\"What's your name? \")`, then `input(\"You: \")` inside the loop.",
+            "hint": "Put a space at the end of each prompt."
+          },
+          {
+            "id": "has_while",
+            "type": "regex",
+            "pattern": "\\bwhile\\b",
+            "pass_text": "You used a `while` loop so the chat can keep going",
+            "fail_text": "This needs a `while` loop",
+            "correction": "Write `while msg != \"bye\":` (or `while True:` and `break` on bye).",
+            "hint": "SETUP the message, CHECK for bye, CHANGE with input() inside the loop."
+          },
+          {
+            "id": "input_inside_while",
+            "type": "while_body_has",
+            "pattern": "\\binput\\s*\\(",
+            "pass_text": "CHANGE: `input()` is inside the loop",
+            "fail_text": "`input()` for the next message must be inside the loop",
+            "correction": "Indent `msg = input(\"You: \")` under `while`.",
+            "hint": "If you only ask once, the loop cannot reach bye unless the first message already was bye."
+          },
+          {
+            "id": "has_elif",
+            "type": "regex",
+            "pattern": "\\belif\\b",
+            "pass_text": "You used `elif` for more than two replies",
+            "fail_text": "Use `if` / `elif` / `else` to pick a reply",
+            "correction": "One path for help, one for name, one for bye, and an else for everything else.",
+            "hint": "Python stops at the first true check, so handle bye on its own path."
+          },
+          {
+            "id": "quits_on_bye",
+            "type": "regex",
+            "pattern": "[\"']bye[\"']",
+            "pass_text": "The quit word is `bye`",
+            "fail_text": "Stop when the message is exactly `bye`",
+            "correction": "Compare to `\"bye\"` with `==` or `!=`. Spelling and spaces matter.",
+            "hint": "Type bye, all lowercase, with no extra spaces."
+          },
+          {
+            "id": "prompt_spaces",
+            "type": "prompt_has_trailing_space",
+            "pass_text": "Your prompts have a trailing space",
+            "fail_text": "A prompt is missing a space at the end",
+            "correction": "Use `input(\"What's your name? \")` and `input(\"You: \")`.",
+            "hint": "Without that space, the answer sticks to the question."
+          }
+        ],
+        "tests": [
+          {
+            "id": "hello_then_bye",
+            "inputs": [
+              "Cole",
+              "hello",
+              "bye"
+            ],
+            "expected_stdout": "Hi Cole! Type bye to quit.\nI heard: hello\nBye Cole!\n",
+            "includes": [
+              "Hi Cole! Type bye to quit.",
+              "I heard: hello",
+              "Bye Cole!"
+            ],
+            "input_count": 3,
+            "last_line_norm": "bye cole!",
+            "status": "ok",
+            "out_of_inputs_is_fail": true,
+            "pass_text": "It greets Cole, replies to hello, then says Bye Cole!",
+            "fail_text": "The hello-then-bye path didn't match",
+            "correction": "We typed Cole, hello, bye. Print the greeting, I heard: hello, then Bye Cole! once at the end.",
+            "hint": "Handle bye inside the loop so the quit message prints, and stop after that.",
+            "fail_if_out_of_inputs": {
+              "fail_text": "The loop kept asking after we typed bye",
+              "correction": "The CHECK should become false (or you should break) when the message is bye.",
+              "hint": "Use `while msg != \"bye\":` and set msg from input() inside the loop."
+            }
+          },
+          {
+            "id": "help_and_name",
+            "inputs": [
+              "Cole",
+              "help",
+              "name",
+              "bye"
+            ],
+            "expected_stdout": "Hi Cole! Type bye to quit.\nI know: help, name, bye\nYou are Cole\nBye Cole!\n",
+            "includes": [
+              "I know: help, name, bye",
+              "You are Cole",
+              "Bye Cole!"
+            ],
+            "input_count": 4,
+            "status": "ok",
+            "pass_text": "help, name, and bye each take the right path",
+            "fail_text": "A command printed the wrong reply",
+            "correction": "help → I know: help, name, bye. name → You are Cole. bye → Bye Cole!",
+            "hint": "Use elif for the extra commands, and keep bye on its own path."
+          }
+        ]
+      }
+    }
+  },
+  "mixed_review": [
+    {
+      "id": "review-l4",
+      "after": "l4",
+      "title": "Mixed review · after Lesson 4",
+      "intro": "A short mix of Lessons 1–4. No new ideas. Guess first, then check.",
+      "questions": [
+        {
+          "id": "r4-1",
+          "prompt": "What does `print(\"name\")` show on the screen?",
+          "options": [
+            "the word name",
+            "the value stored in name",
+            "an error"
+          ],
+          "correct": 0,
+          "why": "Quotes make a string, so Python prints exactly what's inside.",
+          "reviews": [
+            "l2"
+          ]
+        },
+        {
+          "id": "r4-2",
+          "prompt": "What does `print(name)` show, if name stores Cole?",
+          "options": [
+            "Cole",
+            "name",
+            "an error"
+          ],
+          "correct": 0,
+          "why": "No quotes, so Python looks up the variable.",
+          "reviews": [
+            "l2"
+          ]
+        },
+        {
+          "id": "r4-3",
+          "prompt": "What is `\"5\" + \"3\"`?",
+          "options": [
+            "8",
+            "53",
+            "15"
+          ],
+          "correct": 1,
+          "why": "Both are strings, so they join. That's concatenation, not math.",
+          "reviews": [
+            "l3"
+          ]
+        },
+        {
+          "id": "r4-4",
+          "prompt": "What is `5 + 3`?",
+          "options": [
+            "8",
+            "53",
+            "5 + 3"
+          ],
+          "correct": 0,
+          "why": "No quotes, so + does math.",
+          "reviews": [
+            "l3"
+          ]
+        },
+        {
+          "id": "r4-5",
+          "prompt": "`input(\"food\")` plus the answer Chicken printed `foodChicken`. What was wrong?",
+          "options": [
+            "The prompt was missing a space",
+            "Chicken should have been a number",
+            "print was the wrong tool"
+          ],
+          "correct": 0,
+          "why": "input() prints the prompt exactly as written. Put a space inside the quotes, before the closing quote.",
+          "reviews": [
+            "l4"
+          ]
+        },
+        {
+          "id": "r4-6",
+          "prompt": "What type of value does `input()` always give you?",
+          "options": [
+            "a string (text)",
+            "a number",
+            "whatever type you asked for"
+          ],
+          "correct": 0,
+          "why": "Even if the person types 15, input() gives you the text '15'. Lesson 5 is about changing that.",
+          "reviews": [
+            "l4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-l8",
+      "after": "l8",
+      "title": "Mixed review · after Lesson 8",
+      "intro": "Lessons 1–8, with the bugs you've already met. Guess first, then check.",
+      "questions": [
+        {
+          "id": "r8-1",
+          "prompt": "How do you fix `print(\"Total: \" + 15)`?",
+          "options": [
+            "print(\"Total: \" + str(15))",
+            "print(\"Total: \" + 15 + 0)",
+            "Leave it. Python will add them."
+          ],
+          "correct": 0,
+          "why": "str() turns the number into text so + can join it. Read a TypeError from the bottom.",
+          "reviews": [
+            "l5"
+          ]
+        },
+        {
+          "id": "r8-2",
+          "prompt": "A TypeError appears. Where should you start reading?",
+          "options": [
+            "From the bottom, at the last line",
+            "From the very first line only",
+            "Ignore it and run it again"
+          ],
+          "correct": 0,
+          "why": "The last line names the error. That's the first place to look.",
+          "reviews": [
+            "l5"
+          ]
+        },
+        {
+          "id": "r8-3",
+          "prompt": "`if password >= \"python\"` let zebra in. What should the check be?",
+          "options": [
+            "password == \"python\"",
+            "password > \"python\"",
+            "password != \"python\""
+          ],
+          "correct": 0,
+          "why": ">= compares strings alphabetically, so zebra counted as true. == checks for an exact match.",
+          "reviews": [
+            "l6"
+          ]
+        },
+        {
+          "id": "r8-4",
+          "prompt": "The grade checks started with `>= 70`, then `>= 90`. What grade did 95 get?",
+          "options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "correct": 1,
+          "why": "Python stops at the first true condition. 95 is also >= 70, so it never reached the A check.",
+          "reviews": [
+            "l7"
+          ]
+        },
+        {
+          "id": "r8-5",
+          "prompt": "A while loop asked for the password forever. What was missing?",
+          "options": [
+            "CHANGE: input() was not inside the loop",
+            "SETUP: the variable was never created",
+            "A print after the loop, which is required"
+          ],
+          "correct": 0,
+          "why": "The CHECK uses the password variable. If you never update it inside the loop, the CHECK stays the same forever.",
+          "reviews": [
+            "l8"
+          ]
+        },
+        {
+          "id": "r8-6",
+          "prompt": "After a while loop ends, do you have to print something?",
+          "options": [
+            "No. A final print is optional",
+            "Yes. Every loop must end with a print",
+            "Yes, or Python will show an error"
+          ],
+          "correct": 0,
+          "why": "The loop is done when the CHECK is false. A print after the loop is only needed if you want to say something then.",
+          "reviews": [
+            "l8"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-l12",
+      "after": "l12",
+      "title": "Mixed review · after Lesson 12",
+      "intro": "A mix of the whole Phase 0 toolkit, including lists, functions, dictionaries, and the chat.",
+      "questions": [
+        {
+          "id": "r12-1",
+          "prompt": "foods = [\"chicken\", \"tacos\", \"pizza\"]. What is `foods[0]`, and what is `len(foods)`?",
+          "options": [
+            "chicken and 3",
+            "tacos and 3",
+            "chicken and 2"
+          ],
+          "correct": 0,
+          "why": "Counting starts at 0, so foods[0] is the first item. len counts items, not the last index.",
+          "reviews": [
+            "l9"
+          ]
+        },
+        {
+          "id": "r12-2",
+          "prompt": "You write `def greet(name):` and the print line, but nothing appears. Why?",
+          "options": [
+            "You defined the function but never called it",
+            "print does not work inside a function",
+            "The name parameter is wrong"
+          ],
+          "correct": 0,
+          "why": "A def line only writes the recipe. You still have to call it, like greet(\"Cole\").",
+          "reviews": [
+            "l10"
+          ]
+        },
+        {
+          "id": "r12-3",
+          "prompt": "person = {\"name\": \"Cole\", \"city\": \"Austin\"}. What does `person[\"city\"]` show?",
+          "options": [
+            "Austin",
+            "city",
+            "KeyError"
+          ],
+          "correct": 0,
+          "why": "You look up a dictionary by its label, not by a position number.",
+          "reviews": [
+            "l11"
+          ]
+        },
+        {
+          "id": "r12-4",
+          "prompt": "The chat loop is `while msg != \"bye\":`, and msg starts as `\"\"`. We type hello, then bye. How many times does `input()` inside the loop run?",
+          "options": [
+            "2",
+            "1",
+            "3"
+          ],
+          "correct": 0,
+          "why": "It asks once for hello, once for bye, then CHECK is false and the loop ends.",
+          "reviews": [
+            "l12",
+            "l8"
+          ]
+        },
+        {
+          "id": "r12-5",
+          "prompt": "In the chat, `help` is an elif after a check for `bye`. If the message is help, what prints?",
+          "options": [
+            "I know: help, name, bye",
+            "Bye!",
+            "I heard: help"
+          ],
+          "correct": 0,
+          "why": "bye is false, so Python moves to the next check and matches help. It never reaches else.",
+          "reviews": [
+            "l12",
+            "l7"
+          ]
+        },
+        {
+          "id": "r12-6",
+          "prompt": "Why is `==` the right check for a password or for the word bye?",
+          "options": [
+            "It tests an exact match",
+            "It lets nearby words through",
+            "It compares alphabetical order"
+          ],
+          "correct": 0,
+          "why": "== means is exactly this. >= compares order, which is how zebra got into the password program.",
+          "reviews": [
+            "l6",
+            "l12"
+          ]
+        }
+      ]
+    }
+  ]
+}

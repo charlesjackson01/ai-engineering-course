@@ -1,0 +1,8 @@
+{
+  "name": "ai-engineering-course",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/workbook.test.mjs"
+  }
+}
